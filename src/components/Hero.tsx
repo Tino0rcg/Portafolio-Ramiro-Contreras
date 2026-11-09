@@ -91,12 +91,12 @@ export const Hero: React.FC = () => {
           src="/pexels-cesar-gaviria-232160-36571389.jpg"
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-cover object-center opacity-30 sm:opacity-35"
+          className="w-full h-full object-cover object-center opacity-55 sm:opacity-60"
         />
-        {/* Degradado lateral: mayor opacidad a la izquierda para contraste de texto */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B111D] via-[#0B111D]/80 to-[#0B111D]/60" />
-        {/* Degradado vertical: transición suave con el navbar arriba y la siguiente sección abajo */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B111D] via-transparent to-[#0B111D]" />
+        {/* Degradado lateral equilibrado: permite apreciar el código manteniendo excelente legibilidad */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B111D]/85 via-[#0B111D]/65 to-[#0B111D]/45" />
+        {/* Degradado vertical: transición suave con navbar y sección inferior */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B111D]/70 via-transparent to-[#0B111D]/90" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
