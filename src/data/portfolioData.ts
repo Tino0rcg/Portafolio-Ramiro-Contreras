@@ -5,11 +5,10 @@ export const personalInfo: PersonalInfo = {
   role: 'Ingeniero Informático | Ingeniería de Soluciones & Transformación Digital',
   tagline: 'Diseño, desarrollo e implementación de soluciones tecnológicas para empresas.',
   bio: [
-    'Ingeniero en Informática de la Universidad de Las Américas, enfocado en la ingeniería de soluciones tecnológicas, desarrollo de software empresarial y transformación digital.',
-    'Mi trabajo se centra en comprender los desafíos operativos y estratégicos de las organizaciones para diseñar e implementar soluciones tecnológicas que optimicen procesos, automaticen tareas y mejoren la gestión de sus operaciones.',
-    'Cuento con experiencia en el diseño y desarrollo de plataformas SaaS, sistemas de gestión empresarial, aplicaciones web y herramientas digitales, participando en distintas etapas del ciclo de desarrollo: análisis de requerimientos, diseño de arquitectura, modelado de datos, implementación, integración de servicios y construcción de interfaces.',
-    'He participado en proyectos como plataformas para optimizar la gestión de equipos técnicos en terreno, sistemas de inventario y trazabilidad para empresas de ingeniería, portales web corporativos y herramientas de automatización de procesos operativos.',
-    'Mi enfoque combina visión técnica y comprensión de negocio: utilizo la tecnología como un habilitador para resolver problemas reales, mejorar la productividad y generar impacto medible en las organizaciones.'
+    'Ingeniero en Informática de la Universidad de Las Américas, enfocado en el diseño y desarrollo de soluciones tecnológicas para entornos empresariales.',
+    'Enfocado en transformar necesidades de negocio en soluciones de software concretas, mediante el diseño de sistemas, desarrollo de plataformas digitales e integración de tecnologías orientadas a optimizar procesos y mejorar la eficiencia operativa.',
+    'He desarrollado proyectos que abarcan plataformas SaaS, sistemas de gestión empresarial, herramientas de automatización y aplicaciones web, abordando desafíos de arquitectura de software, bases de datos, integración de servicios y experiencia de usuario.',
+    'Mi visión integra ingeniería de software y comprensión de los procesos de negocio, con especial interés en crear soluciones tecnológicas robustas, funcionales y sostenibles que aporten valor real a las organizaciones.'
   ],
   location: 'Chile',
   workMode: 'Remoto / Híbrido',
