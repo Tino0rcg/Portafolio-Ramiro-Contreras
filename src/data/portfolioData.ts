@@ -1,14 +1,19 @@
-import type { PersonalInfo, Project, SkillGroup, ExperienceItem } from '../types';
+import type { PersonalInfo, Project, SkillGroup, ExperienceItem, ProfessionalCompetency } from '../types';
 
 export const personalInfo: PersonalInfo = {
   name: 'Ramiro Contreras',
-  role: 'Ingeniero Informático & Arquitecto SaaS',
-  tagline: 'Diseño y arquitectura de plataformas SaaS, sistemas de gestión empresarial y soluciones digitales de alto impacto.',
+  role: 'Ingeniero Informático | Ingeniería de Soluciones & Transformación Digital',
+  tagline: 'Diseño, desarrollo e implementación de soluciones tecnológicas para empresas.',
   bio: [
-    'Ingeniero Informático especializado en el diseño, arquitectura y construcción de software empresarial: desde plataformas SaaS para gestionar solicitudes y tiempos de atención al cliente con inteligencia artificial, hasta sistemas digitales para control de operaciones en terreno y portales corporativos modernos.',
-    'Aplico principios sólidos de ingeniería de software para resolver problemas operativos reales: optimización de procesos de negocio, modelado de bases de datos seguras y desarrollo de herramientas intuitivas preparadas para escalar.'
+    'Ingeniero en Informática de la Universidad de Las Américas, enfocado en la ingeniería de soluciones tecnológicas, desarrollo de software empresarial y transformación digital.',
+    'Mi trabajo se centra en comprender los desafíos operativos y estratégicos de las organizaciones para diseñar e implementar soluciones tecnológicas que optimicen procesos, automaticen tareas y mejoren la gestión de sus operaciones.',
+    'Cuento con experiencia en el diseño y desarrollo de plataformas SaaS, sistemas de gestión empresarial, aplicaciones web y herramientas digitales, participando en distintas etapas del ciclo de desarrollo: análisis de requerimientos, diseño de arquitectura, modelado de datos, implementación, integración de servicios y construcción de interfaces.',
+    'He participado en proyectos como plataformas para optimizar la gestión de equipos técnicos en terreno, sistemas de inventario y trazabilidad para empresas de ingeniería, portales web corporativos y herramientas de automatización de procesos operativos.',
+    'Mi enfoque combina visión técnica y comprensión de negocio: utilizo la tecnología como un habilitador para resolver problemas reales, mejorar la productividad y generar impacto medible en las organizaciones.'
   ],
-  location: 'Chile / Remoto',
+  location: 'Chile',
+  workMode: 'Remoto / Híbrido',
+  availability: 'Disponible para oportunidades profesionales y proyectos tecnológicos.',
   email: 'contrerasramiro1098@gmail.com',
   linkedin: 'https://www.linkedin.com/in/ramiro-contreras-gonzález-656077363/',
   whatsapp: '+56950826763',
@@ -292,23 +297,59 @@ export const skillsData: SkillGroup[] = [
   }
 ];
 
+export const competenciasData: ProfessionalCompetency[] = [
+  {
+    title: 'Ingeniería de Soluciones Tecnológicas',
+    items: [
+      'Análisis de necesidades empresariales y diseño de soluciones digitales',
+      'Optimización y automatización de procesos operativos',
+      'Consultoría tecnológica y transformación digital'
+    ]
+  },
+  {
+    title: 'Arquitectura y Desarrollo de Software',
+    items: [
+      'Diseño y desarrollo de plataformas SaaS y aplicaciones web',
+      'Modelado de bases de datos relacionales y diseño de APIs',
+      'Implementación de arquitecturas modernas y escalables'
+    ]
+  },
+  {
+    title: 'Datos, Automatización e Inteligencia Artificial',
+    items: [
+      'Integración de herramientas de IA aplicada a procesos de negocio',
+      'Automatización de flujos de trabajo e integración de servicios',
+      'Análisis y estructuración de datos para toma de decisiones'
+    ]
+  },
+  {
+    title: 'Tecnología e Infraestructura TI',
+    items: [
+      'Integración de servicios en la nube y despliegue continuo',
+      'Implementación de buenas prácticas de desarrollo y seguridad',
+      'Consultoría en adopción de herramientas tecnológicas'
+    ]
+  }
+];
+
 export const experienceData: ExperienceItem[] = [
   {
-    role: 'Ingeniero de Software & Arquitecto SaaS',
+    role: 'Plataforma SaaS & Gestión Operativa',
     organization: 'OnlineDesk & ICSA Ingeniería',
-    description: 'Diseño y arquitectura de plataformas SaaS empresariales: OnlineDesk (gestión de solicitudes y control de tiempos de atención con inteligencia artificial) e ICSA (plataforma SaaS para órdenes de trabajo en terreno con firmas digitales, checklists de seguridad, inventario de herramientas y actas de liquidación en PDF).',
+    description: 'Plataforma SaaS para gestión operativa de servicios técnicos, control de inventario y trazabilidad de materiales.',
     technologies: ['Next.js 15', 'React 19', 'Supabase Realtime', 'Firmas en Pantalla', 'Reportes PDF', 'PostgreSQL', 'TypeScript']
   },
   {
-    role: 'Ingeniero de Soluciones Web',
+    role: 'Portal Corporativo & Asesoría Tecnológica',
     organization: 'ONLINE System & Consultoría TI',
-    description: 'Arquitectura y desarrollo de la plataforma web corporativa de ONLINE System, catálogo modular de 10 servicios de ingeniería, calculadora interactiva de pérdidas de dinero y optimización para posicionamiento en Google (SEO).',
-    technologies: ['Next.js 15', 'React 19', 'Tailwind CSS', 'Gráficos Interactivos', 'SEO Google']
+    description: 'Desarrollo de portal corporativo y asesoría tecnológica para posicionamiento y servicios digitales.',
+    technologies: ['Next.js 15', 'React 19', 'Tailwind CSS', 'Google Gemini API', 'SEO Google']
   },
   {
-    role: 'Ingeniero de Frontend & Diseño UI',
+    role: 'Plataforma Web & Catálogo Digital',
     organization: 'Colectivo OFT | Arquitectura',
-    description: 'Diseño e implementación de la plataforma web para estudio y colectivo de arquitectura, catálogo de servicios de diseño y renders 3D, video de fondo en alta calidad y transiciones visuales fluidas.',
+    description: 'Plataforma web para exhibición de proyectos arquitectónicos y catálogo digital interactivo.',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Animaciones Web', 'Diseño Editorial']
   }
 ];
+

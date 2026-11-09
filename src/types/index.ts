@@ -51,12 +51,19 @@ export interface ExperienceItem {
   technologies?: string[];
 }
 
+export interface ProfessionalCompetency {
+  title: string;
+  items: string[];
+}
+
 export interface PersonalInfo {
   name: string;
   role: string;
   tagline: string;
   bio: string[];
   location: string;
+  workMode?: string;
+  availability?: string;
   email: string;
   github?: string;
   linkedin: string;
