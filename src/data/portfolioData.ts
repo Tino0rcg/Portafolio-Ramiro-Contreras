@@ -52,10 +52,10 @@ export const projectsData: Project[] = [
       }
     ],
     highlights: [
+      'Notificaciones al Correo & PDF con Trazabilidad: Por cada movimiento del ticket e interacción en el chat con el técnico, llega toda la información directamente al correo del cliente junto con un PDF de trazabilidad completa.',
       'Tablero Visual en Vivo: Las solicitudes avanzan ordenadamente por columnas (Ingresado, En proceso, En revisión y Terminado) actualizándose al instante sin recargar la página.',
       'Reloj Inteligente de Tiempos de Respuesta: Mide con precisión los plazos acordados con cada cliente y se pausa automáticamente mientras el cliente revisa el trabajo.',
       'Chat en Vivo Instantáneo: Comunicación directa entre el cliente y el técnico con mensajes que aparecen al instante (0 segundos de espera).',
-      'Notificaciones al Correo y PDF con Trazabilidad: Por cada movimiento del ticket e interacción en el chat, el sistema envía automáticamente toda la información al correo del cliente junto con un PDF de trazabilidad completa.',
       'Asignación Inteligente con IA: Clasifica la falla según su categoría técnica y la asigna al especialista disponible con menor cantidad de tareas pendientes.',
       'Notificaciones al Celular: Funciona como aplicación en teléfonos Android e iPhone, avisando de inmediato con alertas en pantalla.',
       'Privacidad y Seguridad por Empresa: Cada cliente accede únicamente a sus propias solicitudes en un entorno seguro y aislado.',

@@ -208,18 +208,37 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
 
           {/* Key Highlights / Puntos Clave */}
           {project.highlights && project.highlights.length > 0 && (
-            <div className="space-y-3 bg-slate-900/60 p-5 rounded-xl border border-slate-800">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+            <div className="space-y-4 bg-slate-900/60 p-5 sm:p-6 rounded-2xl border border-slate-800 shadow-md">
+              <h4 className="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                 Módulos & Funcionalidades Principales
               </h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-300">
-                {project.highlights.map((highlight, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <span className="text-indigo-400 font-bold">•</span>
-                    <span>{highlight}</span>
-                  </li>
-                ))}
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-300">
+                {project.highlights.map((highlight, index) => {
+                  const colonIndex = highlight.indexOf(':');
+                  const hasColon = colonIndex !== -1;
+                  const title = hasColon ? highlight.substring(0, colonIndex) : '';
+                  const rest = hasColon ? highlight.substring(colonIndex + 1) : highlight;
+
+                  return (
+                    <li
+                      key={index}
+                      className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 hover:border-slate-700 transition-colors"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 shrink-0 mt-1.5" />
+                      <div className="leading-relaxed">
+                        {hasColon ? (
+                          <>
+                            <strong className="text-white font-semibold">{title}:</strong>
+                            <span className="text-slate-300/90">{rest}</span>
+                          </>
+                        ) : (
+                          <span className="text-slate-300/90">{highlight}</span>
+                        )}
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           )}
