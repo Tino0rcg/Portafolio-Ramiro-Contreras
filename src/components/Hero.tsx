@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, ExternalLink, ArrowRight, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, ArrowRight, Sparkles, TrendingUp } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
 
 interface FeaturedProjectMeta {
@@ -141,6 +141,17 @@ export const Hero: React.FC = () => {
             <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#35D6A5]">
               <span className="w-2 h-2 rounded-full bg-[#35D6A5] shrink-0 animate-pulse" />
               <span>Disponible para proyectos y consultoría</span>
+            </div>
+
+            {/* Elemento flotante de métrica de impacto */}
+            <div className="mt-4 sm:mt-5 inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#131E30]/90 border border-[#29374D] shadow-xl shadow-black/25 backdrop-blur-md animate-float hover:border-[#35D6A5]/50 transition-colors">
+              <div className="w-6 h-6 rounded-lg bg-[#35D6A5]/15 border border-[#35D6A5]/30 flex items-center justify-center text-[#35D6A5] shrink-0">
+                <TrendingUp className="w-3.5 h-3.5" />
+              </div>
+              <p className="text-xs sm:text-sm font-medium">
+                <span className="font-extrabold text-[#35D6A5] mr-1.5">+30%</span>
+                <span className="text-[#A9B5C8]">de mejora operativa</span>
+              </p>
             </div>
           </div>
 
