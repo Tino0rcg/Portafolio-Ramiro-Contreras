@@ -1,7 +1,7 @@
 # Portafolio Profesional — Ramiro Contreras
 
-> **Ingeniero Informático & Arquitecto SaaS**  
-> Diseño y arquitectura de plataformas SaaS, sistemas de gestión empresarial y soluciones digitales de alto impacto.
+> **Ingeniero Informático**  
+> Desarrollo de software, sistemas de gestión empresarial y soluciones web adaptadas a los procesos de cada empresa.
 
 ---
 
