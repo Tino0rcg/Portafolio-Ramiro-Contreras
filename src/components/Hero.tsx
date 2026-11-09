@@ -33,7 +33,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Main Title & Role */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
+        <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-5 sm:mb-6 leading-[1.15]">
           Creando soluciones de{' '}
           <span className="bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">
             Software
@@ -45,15 +45,15 @@ export const Hero: React.FC = () => {
         </h1>
 
         {/* Tagline / Subtitle */}
-        <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed font-normal">
+        <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 mb-8 sm:mb-10 leading-relaxed font-normal px-2 sm:px-0">
           {personalInfo.tagline}
         </p>
 
         {/* Call to Actions */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-12 w-full max-w-xs sm:max-w-none mx-auto">
           <a
             href="#proyectos"
-            className="flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:scale-105 active:scale-95 transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:scale-105 active:scale-95 transition-all"
           >
             <span>Ver Proyectos</span>
             <ArrowDown className="w-4 h-4" />
@@ -61,7 +61,7 @@ export const Hero: React.FC = () => {
 
           <a
             href="#contacto"
-            className="flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 hover:text-white shadow-md hover:scale-105 active:scale-95 transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 hover:text-white shadow-md hover:scale-105 active:scale-95 transition-all"
           >
             <Mail className="w-4 h-4 text-indigo-400" />
             <span>Contactar Conmigo</span>
@@ -69,14 +69,14 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Social / Direct Links */}
-        <div className="flex items-center justify-center gap-5 text-slate-400 mb-14">
+        <div className="flex items-center justify-center gap-3 sm:gap-5 text-slate-400 mb-10 sm:mb-14">
           {personalInfo.github && (
             <a
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500 hover:text-indigo-400 hover:scale-110 transition-all shadow"
+              className="p-3 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500 hover:text-indigo-400 hover:scale-110 transition-all shadow"
             >
               <GithubIcon className="w-5 h-5" />
             </a>
@@ -87,7 +87,7 @@ export const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500 hover:text-indigo-400 hover:scale-110 transition-all shadow"
+              className="p-3 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500 hover:text-indigo-400 hover:scale-110 transition-all shadow"
             >
               <LinkedinIcon className="w-5 h-5" />
             </a>
@@ -98,7 +98,7 @@ export const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500 hover:text-emerald-400 hover:scale-110 transition-all shadow"
+              className="p-3 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500 hover:text-emerald-400 hover:scale-110 transition-all shadow"
             >
               <MessageCircle className="w-5 h-5" />
             </a>
@@ -106,32 +106,32 @@ export const Hero: React.FC = () => {
           <a
             href={`mailto:${personalInfo.email}`}
             aria-label="Email"
-            className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500 hover:text-indigo-400 hover:scale-110 transition-all shadow"
+            className="p-3 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500 hover:text-indigo-400 hover:scale-110 transition-all shadow"
           >
             <Mail className="w-5 h-5" />
           </a>
         </div>
 
         {/* Key Competence Highlights / Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto pt-6 border-t border-slate-800/80">
-          <div className="flex items-center justify-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
-            <Globe className="w-6 h-6 text-cyan-400" />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto pt-6 border-t border-slate-800/80">
+          <div className="flex items-center justify-start sm:justify-center gap-3 p-3.5 sm:p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
+            <Globe className="w-6 h-6 text-cyan-400 shrink-0" />
             <div className="text-left">
               <h4 className="text-sm font-semibold text-white">Ingeniería Web</h4>
               <p className="text-xs text-slate-400">Páginas y Aplicaciones Rápidas</p>
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
-            <Cpu className="w-6 h-6 text-indigo-400" />
+          <div className="flex items-center justify-start sm:justify-center gap-3 p-3.5 sm:p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
+            <Cpu className="w-6 h-6 text-indigo-400 shrink-0" />
             <div className="text-left">
               <h4 className="text-sm font-semibold text-white">Sistemas & SaaS</h4>
               <p className="text-xs text-slate-400">Gestión de Procesos y Operación</p>
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
-            <Terminal className="w-6 h-6 text-purple-400" />
+          <div className="flex items-center justify-start sm:justify-center gap-3 p-3.5 sm:p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
+            <Terminal className="w-6 h-6 text-purple-400 shrink-0" />
             <div className="text-left">
               <h4 className="text-sm font-semibold text-white">Automatización con IA</h4>
               <p className="text-xs text-slate-400">Procesos Automáticos y Reportes</p>

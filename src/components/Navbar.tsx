@@ -34,15 +34,15 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <a
             href="#"
-            className="flex items-center gap-2 group text-white font-bold text-lg tracking-tight hover:opacity-90 transition-opacity"
+            className="flex items-center gap-2 group text-white font-bold text-base sm:text-lg tracking-tight hover:opacity-90 transition-opacity min-w-0"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform shrink-0">
               <Code2 className="w-5 h-5" />
             </div>
-            <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent truncate max-w-[150px] xs:max-w-[220px] sm:max-w-none">
               {personalInfo.name !== 'Tu Nombre' ? personalInfo.name : 'Portafolio'}
             </span>
-            <span className="text-indigo-400 font-mono text-sm">.dev</span>
+            <span className="text-indigo-400 font-mono text-xs sm:text-sm shrink-0">.dev</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -71,27 +71,27 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition-colors"
-              aria-label="Abrir menú"
+              className="p-2.5 rounded-xl text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+              aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
         {/* Mobile menu dropdown */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 pt-2 border-t border-slate-800 bg-[#0d1322] rounded-2xl p-4 shadow-xl border">
-            <div className="flex flex-col gap-3">
+          <div className="md:hidden mt-3 pb-4 pt-2 border border-slate-700/80 bg-[#0d1322]/95 backdrop-blur-xl rounded-2xl p-4 shadow-2xl animate-fadeIn">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/70 text-base font-medium transition-colors"
+                  className="px-3.5 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 text-sm font-medium transition-colors"
                 >
                   {link.name}
                 </a>
@@ -99,10 +99,10 @@ export const Navbar: React.FC = () => {
               <a
                 href="#contacto"
                 onClick={() => setIsOpen(false)}
-                className="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600"
+                className="mt-2 flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg shadow-indigo-600/30"
               >
                 <Send className="w-4 h-4" />
-                <span>Contactar</span>
+                <span>Contactar Conmigo</span>
               </a>
             </div>
           </div>

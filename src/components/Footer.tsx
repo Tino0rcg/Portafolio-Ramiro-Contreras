@@ -10,11 +10,11 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="border-t border-slate-800/80 bg-slate-950/70 py-10 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+    <footer className="border-t border-slate-800/80 bg-slate-950/70 py-8 sm:py-10 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 text-center sm:text-left">
         {/* Brand */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-indigo-600/30 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+          <div className="w-8 h-8 rounded-lg bg-indigo-600/30 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shrink-0">
             <Code2 className="w-4 h-4" />
           </div>
           <span className="text-sm font-semibold text-white">
@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Center note */}
-        <p className="text-xs text-slate-400 flex items-center gap-1.5">
+        <p className="text-xs text-slate-400 flex items-center justify-center gap-1.5">
           <span>Diseñado y construido con</span>
           <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
         </p>
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
         {/* Scroll to top */}
         <button
           onClick={scrollToTop}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all hover:scale-105"
+          className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-400 hover:text-white bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all hover:scale-105 cursor-pointer"
           aria-label="Volver arriba"
         >
           <span>Subir</span>

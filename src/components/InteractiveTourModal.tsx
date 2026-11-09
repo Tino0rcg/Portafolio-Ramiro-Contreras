@@ -107,13 +107,18 @@ export const InteractiveTourModal: React.FC<InteractiveTourModalProps> = ({ proj
         </div>
 
         {/* Bottom Status / Guidance Bar */}
-        <div className="px-4 py-2.5 sm:px-6 bg-slate-900/90 border-t border-slate-800 flex items-center justify-between gap-3 text-xs text-slate-400 shrink-0">
-          <p className="truncate">
-            <strong className="text-slate-200">🛡️ Entorno Aislado:</strong> Esta experiencia interactiva simula los módulos y lógica real de tu software sin tocar bases de datos de producción.
+        <div className="px-3 sm:px-6 py-2 sm:py-2.5 bg-slate-900/90 border-t border-slate-800 flex items-center justify-between gap-3 text-xs text-slate-400 shrink-0">
+          <p className="truncate text-[11px] sm:text-xs">
+            <span className="hidden sm:inline">
+              <strong className="text-slate-200">🛡️ Entorno Aislado:</strong> Esta experiencia interactiva simula los módulos y lógica real de tu software sin tocar bases de datos de producción.
+            </span>
+            <span className="sm:hidden text-slate-300">
+              🛡️ Entorno Demostrativo Interactivo
+            </span>
           </p>
           <button
             onClick={onClose}
-            className="px-3 py-1 rounded-md text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors shrink-0 cursor-pointer"
+            className="px-2.5 sm:px-3 py-1 rounded-md text-[11px] sm:text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors shrink-0 cursor-pointer"
           >
             Finalizar recorrido
           </button>
