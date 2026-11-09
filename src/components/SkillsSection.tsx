@@ -87,24 +87,11 @@ export const SkillsSection: React.FC = () => {
                           {skill.name}
                         </span>
                       </div>
-                      <div className="flex items-center gap-1.5 shrink-0">
-                        {skill.level && (
-                          <span
-                            className={`text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded-md border shrink-0 whitespace-nowrap ${
-                              skill.level === 'Especialidad'
-                                ? 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40'
-                                : 'bg-slate-900/80 text-slate-400 border-slate-700/50'
-                            }`}
-                          >
-                            {skill.level}
-                          </span>
-                        )}
-                        <ChevronDown
-                          className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 shrink-0 ${
-                            isExpanded ? 'rotate-180 text-indigo-400' : ''
-                          }`}
-                        />
-                      </div>
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 shrink-0 ${
+                          isExpanded ? 'rotate-180 text-indigo-400' : ''
+                        }`}
+                      />
                     </div>
 
                     {/* Contenido expandido con contexto de aplicación real */}
