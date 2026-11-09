@@ -1,8 +1,10 @@
-import React from 'react';
-import { Cpu, Globe, Database, Terminal, Code, Check } from 'lucide-react';
+import React, { useState } from 'react';
+import { Cpu, Globe, Database, Terminal, Code, Check, ChevronDown } from 'lucide-react';
 import { skillsData } from '../data/portfolioData';
 
 export const SkillsSection: React.FC = () => {
+  const [expandedSkill, setExpandedSkill] = useState<string | null>(null);
+
   const getCategoryIcon = (index: number) => {
     switch (index) {
       case 0:
@@ -14,6 +16,10 @@ export const SkillsSection: React.FC = () => {
       default:
         return <Terminal className="w-5 h-5 text-purple-400" />;
     }
+  };
+
+  const toggleSkill = (skillName: string) => {
+    setExpandedSkill(prev => (prev === skillName ? null : skillName));
   };
 
   return (
@@ -30,17 +36,20 @@ export const SkillsSection: React.FC = () => {
         <p className="text-sm sm:text-base md:text-lg text-slate-300 px-2 sm:px-0">
           Herramientas y tecnologías modernas con las que diseño y construyo sistemas robustos, seguros y escalables.
         </p>
+        <p className="text-xs sm:text-sm text-indigo-400/90 mt-2 font-medium">
+          💡 Haz clic en cualquier tecnología para expandir su aplicación práctica en proyectos.
+        </p>
       </div>
 
       {/* Grid of Skill Groups */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 items-start">
         {skillsData.map((group, groupIdx) => (
           <div
             key={group.category}
             className="p-5 sm:p-7 md:p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition-all duration-300 shadow-lg"
           >
             {/* Group Header */}
-            <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-5">
+            <div className="flex items-start gap-3 sm:gap-4 mb-5">
               <div className="p-2.5 sm:p-3 rounded-xl bg-slate-800/80 border border-slate-700/60 shadow-inner shrink-0">
                 {getCategoryIcon(groupIdx)}
               </div>
@@ -54,26 +63,59 @@ export const SkillsSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Skills List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 pt-1 sm:pt-2">
-              {group.skills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-slate-800/40 border border-slate-800/80 hover:bg-slate-800/70 hover:border-slate-700/80 transition-colors min-w-0"
-                >
-                  <div className="flex items-center gap-2 min-w-0">
-                    <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
-                    <span className="text-xs sm:text-sm font-medium text-slate-200 truncate" title={skill.name}>
-                      {skill.name}
-                    </span>
+            {/* Skills List: Sin textos cortados, ancho completo y expandible al hacer clic */}
+            <div className="grid grid-cols-1 gap-2.5 pt-1">
+              {group.skills.map((skill) => {
+                const isExpanded = expandedSkill === skill.name;
+
+                return (
+                  <div
+                    key={skill.name}
+                    onClick={() => toggleSkill(skill.name)}
+                    className={`p-3 sm:p-3.5 rounded-xl border transition-all cursor-pointer select-none ${
+                      isExpanded
+                        ? 'bg-slate-800/90 border-indigo-500/70 shadow-lg shadow-indigo-500/10'
+                        : 'bg-slate-800/40 border-slate-800/80 hover:bg-slate-800/70 hover:border-slate-700/90'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex items-start gap-2.5 min-w-0">
+                        <Check className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-sm font-medium text-slate-200 leading-snug break-words">
+                          {skill.name}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 shrink-0">
+                        {skill.level && (
+                          <span
+                            className={`text-[10px] sm:text-[11px] font-semibold px-2.5 py-0.5 rounded-md border shrink-0 whitespace-nowrap ${
+                              skill.level === 'Especialidad'
+                                ? 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40'
+                                : 'bg-slate-900/80 text-slate-300 border-slate-700/60'
+                            }`}
+                          >
+                            {skill.level}
+                          </span>
+                        )}
+                        <ChevronDown
+                          className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 shrink-0 ${
+                            isExpanded ? 'rotate-180 text-indigo-400' : ''
+                          }`}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Contenido expandido con contexto de aplicación real */}
+                    {isExpanded && skill.detail && (
+                      <div className="mt-2.5 pt-2.5 border-t border-slate-700/60">
+                        <p className="text-xs sm:text-sm text-slate-300/95 leading-relaxed">
+                          {skill.detail}
+                        </p>
+                      </div>
+                    )}
                   </div>
-                  {skill.level && (
-                    <span className="text-[10px] sm:text-[11px] font-semibold text-slate-400 bg-slate-900/80 px-2 py-0.5 rounded-md border border-slate-700/50 shrink-0">
-                      {skill.level}
-                    </span>
-                  )}
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         ))}

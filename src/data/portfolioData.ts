@@ -227,49 +227,149 @@ export const skillsData: SkillGroup[] = [
     category: 'Inteligencia Artificial & Aplicaciones Web Modernas',
     description: 'Automatización con inteligencia artificial (OpenAI, Claude, DeepSeek, Groq, Ollama), aplicaciones rápidas en tiempo real y soluciones interactivas.',
     skills: [
-      { name: 'Modelos de IA: OpenAI, Claude (Anthropic) & DeepSeek', level: 'Especialidad' },
-      { name: 'Inferencia con Groq & IA Local con Ollama', level: 'Especialidad' },
-      { name: 'API Google Gemini & Automatización con IA', level: 'Especialidad' },
-      { name: 'Next.js 15 & React 19', level: 'Avanzado' },
-      { name: 'TypeScript & JavaScript Moderno', level: 'Avanzado' },
-      { name: 'Actualización en Tiempo Real (WebSockets)', level: 'Avanzado' },
-      { name: 'Aplicaciones Móviles Web (PWA) & Notificaciones Push', level: 'Avanzado' },
-      { name: 'Diseño Adaptable para Celulares y Computadores', level: 'Avanzado' }
+      {
+        name: 'Modelos de IA: OpenAI, Claude (Anthropic) & DeepSeek',
+        level: 'Especialidad',
+        detail: 'Integración de modelos LLM para procesamiento de lenguaje natural, clasificación automática de solicitudes y generación de respuestas.'
+      },
+      {
+        name: 'Inferencia con Groq & IA Local con Ollama',
+        level: 'Especialidad',
+        detail: 'Ejecución y despliegue privado de modelos de IA en servidores locales con Ollama y aceleración de inferencia con hardware Groq LPU.'
+      },
+      {
+        name: 'API Google Gemini & Automatización con IA',
+        level: 'Especialidad',
+        detail: 'Automatización de pipelines editoriales, investigación técnica de fuentes líderes mundiales y optimización continua de posicionamiento SEO.'
+      },
+      {
+        name: 'Next.js 15 & React 19',
+        level: 'Avanzado',
+        detail: 'Arquitecturas web modernas con Server Components, Server Actions, renderizado híbrido y tiempos de carga ultra veloces.'
+      },
+      {
+        name: 'TypeScript & JavaScript Moderno',
+        level: 'Avanzado',
+        detail: 'Desarrollo fuertemente tipado, modelado de interfaces robustas y prevención de errores en aplicaciones empresariales.'
+      },
+      {
+        name: 'Actualización en Tiempo Real (WebSockets)',
+        level: 'Avanzado',
+        detail: 'Sincronización instantánea de datos sin recargar la página: tableros Kanban colaborativos y mensajería en vivo.'
+      },
+      {
+        name: 'Aplicaciones Móviles Web (PWA) & Notificaciones Push',
+        level: 'Avanzado',
+        detail: 'Instalación nativa en celulares Android e iOS sin pasar por tiendas, con funcionamiento sin conexión y alertas push.'
+      },
+      {
+        name: 'Diseño Adaptable para Celulares y Computadores',
+        level: 'Avanzado',
+        detail: 'Construcción de interfaces responsivas con Tailwind CSS optimizadas para cualquier dispositivo y tamaño de pantalla.'
+      }
     ]
   },
   {
     category: 'Software de Gestión para Empresas & Operaciones',
     description: 'Digitalización de procesos, órdenes de trabajo, control de tiempos de atención y firmas digitales.',
     skills: [
-      { name: 'Gestión de Solicitudes y Control de Tiempos de Respuesta', level: 'Especialidad' },
-      { name: 'Órdenes de Trabajo Digitales & Seguridad Laboral', level: 'Especialidad' },
-      { name: 'Firmas Digitales (En Pantalla con el Dedo o por Correo)', level: 'Avanzado' },
-      { name: 'Generación Automática de Informes en PDF', level: 'Avanzado' },
-      { name: 'Control de Inventario & Devolución de Herramientas', level: 'Avanzado' },
-      { name: 'Desarrollo de Software y Automatizaciones', level: 'Avanzado' }
+      {
+        name: 'Gestión de Solicitudes y Control de Tiempos de Respuesta',
+        level: 'Especialidad',
+        detail: 'Control de acuerdos SLA, cronómetros automáticos con pausa de revisión y trazabilidad integral del servicio al cliente.'
+      },
+      {
+        name: 'Órdenes de Trabajo Digitales & Seguridad Laboral',
+        level: 'Especialidad',
+        detail: 'Digitalización de partes diarios en terreno, control de elementos de protección personal (EPP) y charlas de seguridad de 5 minutos.'
+      },
+      {
+        name: 'Firmas Digitales (En Pantalla con el Dedo o por Correo)',
+        level: 'Avanzado',
+        detail: 'Captura táctil presencial en dispositivos móviles y firma remota mediante enlaces seguros con token temporal de expiración.'
+      },
+      {
+        name: 'Generación Automática de Informes en PDF',
+        level: 'Avanzado',
+        detail: 'Creación dinámica en cliente y servidor de actas de liquidación, reportes ejecutivos e informes formales con fotos de evidencia.'
+      },
+      {
+        name: 'Control de Inventario & Devolución de Herramientas',
+        level: 'Avanzado',
+        detail: 'Trazabilidad de herramientas e instrumentos de alto valor, asignación individual a cuadrillas y firma de recepción y retorno.'
+      },
+      {
+        name: 'Desarrollo de Software y Automatizaciones',
+        level: 'Avanzado',
+        detail: 'Diseño de sistemas empresariales a medida para conectar operaciones, suprimir tareas manuales repetitivas y elevar la productividad.'
+      }
     ]
   },
   {
     category: 'Cloud Computing, Bases de Datos Relacionales & Ciberseguridad',
     description: 'Infraestructura cloud, bases de datos relacionales SQL (PostgreSQL), ciberseguridad, IoT y métricas de negocio.',
     skills: [
-      { name: 'Bases de Datos Relacionales SQL (PostgreSQL)', level: 'Avanzado' },
-      { name: 'Cloud Computing & Despliegues en la Nube', level: 'Avanzado' },
-      { name: 'Ciberseguridad & Protección de Datos', level: 'Avanzado' },
-      { name: 'IoT (Internet de las Cosas & Conectividad)', level: 'Avanzado' },
-      { name: 'Almacenamiento en Supabase & APIs', level: 'Avanzado' },
-      { name: 'Posicionamiento en Google (SEO para Empresas)', level: 'Avanzado' }
+      {
+        name: 'Bases de Datos Relacionales SQL (PostgreSQL)',
+        level: 'Avanzado',
+        detail: 'Modelado relacional, diseño de esquemas, integridad referencial, transacciones seguras y optimización de consultas SQL.'
+      },
+      {
+        name: 'Cloud Computing & Despliegues en la Nube',
+        level: 'Avanzado',
+        detail: 'Arquitectura de servidores en la nube, despliegues continuos (CI/CD), escalabilidad y alta disponibilidad de aplicaciones.'
+      },
+      {
+        name: 'Ciberseguridad & Protección de Datos',
+        level: 'Avanzado',
+        detail: 'Aislamiento de datos multitenant por empresa, encriptación en tránsito y reposo, y protección ante vulnerabilidades OWASP.'
+      },
+      {
+        name: 'IoT (Internet de las Cosas & Conectividad)',
+        level: 'Avanzado',
+        detail: 'Conectividad de dispositivos inteligentes, captura telemétrica de sensores y monitoreo remoto de activos.'
+      },
+      {
+        name: 'Almacenamiento en Supabase & APIs',
+        level: 'Avanzado',
+        detail: 'Gestión de buckets seguros para almacenamiento de imágenes comprimidas y documentos, con endpoints REST y canales en tiempo real.'
+      },
+      {
+        name: 'Posicionamiento en Google (SEO para Empresas)',
+        level: 'Avanzado',
+        detail: 'Datos estructurados JSON-LD, optimización de métricas Core Web Vitals y estrategias técnicas para indexación en Google.'
+      }
     ]
   },
   {
     category: 'Herramientas de Trabajo & Entorno de Desarrollo',
     description: 'Herramientas prácticas utilizadas en el día a día para programar, gestionar versiones y publicar proyectos.',
     skills: [
-      { name: 'Git & GitHub (Control de Versiones y Código)', level: 'Avanzado' },
-      { name: 'Visual Studio Code (Editor & Entorno de Trabajo)', level: 'Avanzado' },
-      { name: 'Node.js & NPM', level: 'Avanzado' },
-      { name: 'Vercel (Despliegue y Hosting en la Nube)', level: 'Avanzado' },
-      { name: 'Pruebas de Conexión e Integración (Postman)', level: 'Avanzado' }
+      {
+        name: 'Git & GitHub (Control de Versiones y Código)',
+        level: 'Avanzado',
+        detail: 'Flujos profesionales de trabajo en equipo, control de ramas, pull requests, versionado semántico y repositorios organizados.'
+      },
+      {
+        name: 'Visual Studio Code (Editor & Entorno de Trabajo)',
+        level: 'Avanzado',
+        detail: 'Configuración productiva del entorno de desarrollo, integración con depuradores, extensiones de tipado y linters.'
+      },
+      {
+        name: 'Node.js & NPM',
+        level: 'Avanzado',
+        detail: 'Entorno de ejecución de backend y scripts, automatización de compilación y administración de paquetes del ecosistema JavaScript.'
+      },
+      {
+        name: 'Vercel (Despliegue y Hosting en la Nube)',
+        level: 'Avanzado',
+        detail: 'Despliegues automatizados mediante git push, enrutamiento edge distribuido globalmente y monitorización de rendimiento.'
+      },
+      {
+        name: 'Pruebas de Conexión e Integración (Postman)',
+        level: 'Avanzado',
+        detail: 'Diseño, prueba y documentación rigurosa de APIs REST, validando respuestas, encabezados y seguridad de endpoints.'
+      }
     ]
   }
 ];

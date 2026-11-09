@@ -40,6 +40,7 @@ export interface SkillGroup {
     name: string;
     level?: string;
     icon?: string;
+    detail?: string;
   }[];
 }
 
