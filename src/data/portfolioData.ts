@@ -265,7 +265,7 @@ export const skillsData: SkillGroup[] = [
       { name: 'Firmas Digitales (En Pantalla con el Dedo o por Correo)', level: 'Avanzado' },
       { name: 'Generación Automática de Informes en PDF', level: 'Avanzado' },
       { name: 'Control de Inventario & Devolución de Herramientas', level: 'Avanzado' },
-      { name: 'Desarrollo de Software y Automatizaciones con Python', level: 'Avanzado' }
+      { name: 'Arquitectura Backend & Integración de APIs REST', level: 'Avanzado' }
     ]
   },
   {
