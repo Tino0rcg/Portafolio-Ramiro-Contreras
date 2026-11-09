@@ -1,88 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, ExternalLink, ArrowRight, Sparkles, TrendingUp } from 'lucide-react';
-import { projectsData } from '../data/portfolioData';
+import React from 'react';
+import { TrendingUp } from 'lucide-react';
 
-interface FeaturedProjectMeta {
-  tabName: string;
-  badge: string;
-  shortTitle: string;
-  problemSolutionResult: string;
-  technologiesText: string;
-  browserUrl: string;
-  glowColor: string;
+interface FeaturedProject {
+  number: string;
+  title: string;
+  description: string;
+  contribution: string;
 }
 
-const featuredProjectsMeta: Record<string, FeaturedProjectMeta> = {
-  'onlinedesk-gestion-requerimientos': {
-    tabName: 'OnlineDesk',
-    badge: 'SaaS en Vivo',
-    shortTitle: 'OnlineDesk — Plataforma SaaS en Tiempo Real',
-    problemSolutionResult: 'Requerimientos desordenados · Tablero Kanban y SLA · Trazabilidad y PDF por correo',
-    technologiesText: 'Next.js · TypeScript · Supabase Realtime · IA · PDF',
-    browserUrl: 'gesti-n-de-requerimientos-app.vercel.app',
-    glowColor: 'from-indigo-600/20 via-blue-600/10 to-transparent',
+const featuredProjects: FeaturedProject[] = [
+  {
+    number: '01',
+    title: 'OnlineDesk · Gestión de solicitudes',
+    description: 'Tickets, asignación con IA, chat y control de tiempos.',
+    contribution: 'Más trazabilidad y seguimiento de la atención.',
   },
-  'software-gestion-operativa-icsa': {
-    tabName: 'ICSA',
-    badge: 'Cero Papel',
-    shortTitle: 'ICSA — Gestión de Órdenes en Terreno',
-    problemSolutionResult: 'Uso de papel y demoras · Órdenes digitales y firmas táctiles · Actas e informes en PDF',
-    technologiesText: 'Next.js 15 · PostgreSQL · Firmas en Pantalla · PDF',
-    browserUrl: 'icsa-operaciones.vercel.app',
-    glowColor: 'from-teal-600/20 via-cyan-600/10 to-transparent',
+  {
+    number: '02',
+    title: 'ICSA · Operación en terreno',
+    description: 'Órdenes digitales, firmas, inventario e informes PDF.',
+    contribution: 'Menos papel y cierres de trabajo más ágiles.',
   },
-  'web-online-system': {
-    tabName: 'ONLINE System',
-    badge: 'Gemini IA',
-    shortTitle: 'ONLINE System — Web con IA Autónoma',
-    problemSolutionResult: 'Posicionamiento web lento · Automatización con API Gemini · Contenido técnico y SEO continuo',
-    technologiesText: 'Next.js 15 · API Google Gemini · Tailwind CSS · SEO',
-    browserUrl: 'onlinesystem.cl',
-    glowColor: 'from-emerald-600/20 via-teal-600/10 to-transparent',
+  {
+    number: '03',
+    title: 'ONLINE System · Web con IA',
+    description: 'Portal TI con blog automatizado y calculadora ROI.',
+    contribution: 'Menos tareas editoriales y apoyo a la captación.',
   },
-  'web-colectivo-oft': {
-    tabName: 'Colectivo OFT',
-    badge: 'Editorial & Video',
-    shortTitle: 'Colectivo OFT — Estudio & Arquitectura',
-    problemSolutionResult: 'Presentación estática · Portafolio editorial interactivo y video · Catálogo de proyectos',
-    technologiesText: 'Next.js · React · Video Streaming · Optimización WebP',
-    browserUrl: 'colectivooft.cl',
-    glowColor: 'from-amber-600/20 via-stone-700/10 to-transparent',
+  {
+    number: '04',
+    title: 'Colectivo OFT · Portafolio web',
+    description: 'Galerías de arquitectura, servicios y contacto directo.',
+    contribution: 'Mejor exhibición de obras y acceso a cotizaciones.',
   },
-};
+];
 
 export const Hero: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % projectsData.length);
-    }, 4500);
-    return () => clearInterval(interval);
-  }, [isPaused, currentIndex]);
-
-  const currentProject = projectsData[currentIndex] || projectsData[0];
-  const meta: FeaturedProjectMeta =
-    featuredProjectsMeta[currentProject.id] || {
-      tabName: currentProject.title.split('—')[0].trim(),
-      badge: 'Destacado',
-      shortTitle: currentProject.title,
-      problemSolutionResult: currentProject.shortDescription,
-      technologiesText: currentProject.technologies.slice(0, 4).join(' · '),
-      browserUrl: 'proyecto.app',
-      glowColor: 'from-indigo-600/20 to-transparent',
-    };
-
-  const prevProject = () => {
-    setCurrentIndex((prev) => (prev - 1 + projectsData.length) % projectsData.length);
-  };
-
-  const nextProject = () => {
-    setCurrentIndex((prev) => (prev + 1) % projectsData.length);
-  };
-
   return (
     <section className="relative overflow-hidden bg-[#0B111D] text-[#F5F6FA] pt-8 sm:pt-10 md:pt-12 lg:pt-14 pb-12 sm:pb-16 md:pb-20 lg:pb-20">
       {/* Imagen de fondo con overlay para preservar legibilidad y estética profesional */}
@@ -155,169 +108,45 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Columna Derecha: Tarjeta de Proyecto Destacado (Dinámica con Timeline y Tabs) */}
-          <div className="lg:col-span-5 w-full">
-            <div
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-              className="bg-[#131E30] border border-[#29374D] rounded-2xl p-4 sm:p-6 shadow-2xl relative overflow-hidden group"
-            >
-              {/* Barra de progreso de tiempo (Timeline Dinámico) */}
-              <div className="w-full h-1 bg-[#1C2B43] rounded-full overflow-hidden mb-4">
+          {/* Columna Derecha: Sección Proyectos Destacados (4 Tarjetas Consecutivas) */}
+          <div className="lg:col-span-5 w-full flex flex-col">
+            {/* Encabezado */}
+            <div className="mb-3 text-left">
+              <h2 className="text-[14px] font-bold text-[#A99AFF] tracking-wider uppercase font-sans mb-0.5">
+                PROYECTOS DESTACADOS
+              </h2>
+              <p className="text-[11px] text-[#A9B5C8] font-sans">
+                Software, automatización y experiencias web
+              </p>
+            </div>
+
+            {/* Lista vertical de 4 tarjetas */}
+            <div className="flex flex-col gap-[13px] w-full">
+              {featuredProjects.map((project) => (
                 <div
-                  key={currentIndex}
-                  className="h-full bg-gradient-to-r from-[#6847FF] to-[#A99AFF] rounded-full animate-progress-fill"
-                  style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
-                />
-              </div>
-
-              {/* Etiqueta superior y controles */}
-              <div className="flex items-center justify-between mb-3.5">
-                <div className="flex items-center gap-2">
-                  <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#A9B5C8] uppercase">
-                    PROYECTO DESTACADO
-                  </span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#1C2B43] text-indigo-300 border border-[#29374D]">
-                    {currentIndex + 1} / 4
-                  </span>
-                </div>
-
-                {/* Flechas de navegación rápida */}
-                <div className="flex items-center gap-1">
-                  <button
-                    onClick={prevProject}
-                    aria-label="Proyecto anterior"
-                    className="p-1.5 rounded-lg text-[#A9B5C8] hover:text-[#F5F6FA] bg-[#1C2B43]/70 hover:bg-[#1C2B43] border border-[#29374D] transition-all cursor-pointer"
-                  >
-                    <ChevronLeft className="w-3.5 h-3.5" />
-                  </button>
-                  <button
-                    onClick={nextProject}
-                    aria-label="Proyecto siguiente"
-                    className="p-1.5 rounded-lg text-[#A9B5C8] hover:text-[#F5F6FA] bg-[#1C2B43]/70 hover:bg-[#1C2B43] border border-[#29374D] transition-all cursor-pointer"
-                  >
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
-
-              {/* Tabs interactivas con los 4 nombres de proyecto */}
-              <div className="grid grid-cols-4 gap-1.5 mb-4 p-1 rounded-xl bg-[#0B111D]/80 border border-[#29374D]/80">
-                {projectsData.map((project, idx) => {
-                  const projectMeta = featuredProjectsMeta[project.id];
-                  const label = projectMeta ? projectMeta.tabName : `P${idx + 1}`;
-                  const isActive = currentIndex === idx;
-
-                  return (
-                    <button
-                      key={project.id}
-                      onClick={() => setCurrentIndex(idx)}
-                      className={`py-1.5 px-1 rounded-lg text-[11px] font-medium transition-all text-center truncate cursor-pointer flex items-center justify-center gap-1 ${
-                        isActive
-                          ? 'bg-[#6847FF] text-white shadow-md shadow-[#6847FF]/30 font-semibold'
-                          : 'text-[#A9B5C8] hover:text-[#F5F6FA] hover:bg-[#1C2B43]'
-                      }`}
-                      title={project.title}
-                    >
-                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#35D6A5] shrink-0" />}
-                      <span className="truncate">{label}</span>
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Contenedor de captura del proyecto: Ventana de navegador con animación fluida */}
-              <div className="bg-[#1C2B43] border border-[#29374D] rounded-xl overflow-hidden mb-4 shadow-inner relative">
-                {/* Barra superior con 3 pequeños círculos, URL del navegador y Badge */}
-                <div className="flex items-center justify-between px-3.5 py-2.5 border-b border-[#29374D] bg-[#162235]">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#29374D]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#29374D]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#29374D]" />
-                  </div>
-                  <span className="text-[11px] font-mono text-[#A9B5C8]/80 truncate max-w-[150px] xs:max-w-[200px] flex items-center gap-1">
-                    <span className="text-[#35D6A5]">🔒</span> https://{meta.browserUrl}
-                  </span>
-                  <span className="text-[10px] font-semibold text-[#A99AFF] bg-[#6847FF]/15 px-2 py-0.5 rounded border border-[#6847FF]/30 flex items-center gap-1">
-                    <Sparkles className="w-2.5 h-2.5 text-[#A99AFF]" />
-                    <span>{meta.badge}</span>
-                  </span>
-                </div>
-
-                {/* Área visual del proyecto con animación al cambiar */}
-                <div
-                  key={currentProject.id}
-                  className="h-44 sm:h-52 w-full bg-[#162235] flex items-center justify-center p-4 overflow-hidden relative animate-hero-project"
+                  key={project.number}
+                  className="bg-[#131E30] border border-[#29374D] rounded-[13px] px-3.5 py-3 sm:px-4 sm:py-3.5 flex items-center gap-3.5 w-full text-left"
                 >
-                  {/* Resplandor ambiental dinámico */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${meta.glowColor} pointer-events-none opacity-50`} />
+                  {/* Columna izquierda: Cuadrado pequeño con número */}
+                  <div className="w-[30px] h-[28px] rounded-[7px] bg-[#252346] text-[#A99AFF] text-[12px] font-bold flex items-center justify-center shrink-0 select-none">
+                    {project.number}
+                  </div>
 
-                  {currentProject.isLogo ? (
-                    currentProject.logoBg === 'bg-white' ? (
-                      <div className="px-5 py-3 rounded-xl bg-white shadow-lg border border-white/90 relative z-10 transition-transform duration-300 group-hover:scale-105">
-                        <img
-                          src={currentProject.image}
-                          alt={currentProject.title}
-                          className="h-14 sm:h-16 w-auto object-contain"
-                        />
-                      </div>
-                    ) : (
-                      <img
-                        src={currentProject.image}
-                        alt={currentProject.title}
-                        className="max-h-20 sm:max-h-24 max-w-[80%] object-contain drop-shadow-xl relative z-10 transition-transform duration-300 group-hover:scale-105"
-                      />
-                    )
-                  ) : (
-                    <img
-                      src={currentProject.image}
-                      alt={currentProject.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  )}
+                  {/* Columna derecha: Título, descripción y aporte */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-[15px] sm:text-[16px] font-semibold text-[#F5F6FA] leading-tight mb-1 truncate">
+                      {project.title}
+                    </h3>
+                    <p className="text-[12px] text-[#A9B5C8] leading-tight mb-1 truncate">
+                      {project.description}
+                    </p>
+                    <div className="flex items-center gap-1.5 text-[10px] leading-tight">
+                      <span className="text-[#8CCBB1] font-medium shrink-0">Aporte</span>
+                      <span className="text-[#A9B5C8] truncate">{project.contribution}</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              {/* Información del proyecto dinámico con animación sincronizada */}
-              <div
-                key={`info-${currentProject.id}`}
-                className="min-h-[110px] flex flex-col justify-between animate-hero-project"
-              >
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-[#F5F6FA] mb-1 line-clamp-1 group-hover:text-white transition-colors">
-                    {meta.shortTitle}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#A9B5C8] mb-1.5 leading-relaxed line-clamp-2">
-                    {meta.problemSolutionResult}
-                  </p>
-                  <p className="text-xs text-[#A9B5C8]/80 mb-3 font-mono">
-                    {meta.technologiesText}
-                  </p>
-                </div>
-
-                {/* Acciones del caso */}
-                <div className="flex items-center justify-between gap-3 pt-1 border-t border-[#29374D]/80">
-                  <a
-                    href="#proyectos"
-                    className="text-sm font-semibold text-[#A99AFF] hover:text-[#6847FF] transition-colors inline-flex items-center gap-1.5 group/link"
-                  >
-                    <span>Ver caso completo</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
-                  </a>
-
-                  {currentProject.liveUrl && (
-                    <a
-                      href={currentProject.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white px-2.5 py-1 rounded-lg bg-[#1C2B43] hover:bg-[#253754] border border-[#29374D] transition-colors"
-                    >
-                      <span>App en Vivo</span>
-                      <ExternalLink className="w-3 h-3 text-cyan-400" />
-                    </a>
-                  )}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
