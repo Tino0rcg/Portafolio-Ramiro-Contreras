@@ -317,10 +317,11 @@ export const competenciasData: ProfessionalCompetency[] = [
   {
     title: 'Datos, Automatización e Inteligencia Artificial',
     items: [
-      'Análisis de datos y diseño de pipelines ETL (Extracción, Transformación y Carga)',
-      'Modelado y procesamiento estadístico con Python y lenguaje R',
       'Integración de herramientas de IA aplicada a procesos de negocio',
-      'Automatización de flujos de trabajo e integración de servicios'
+      'Automatización de flujos de trabajo e integración de servicios',
+      'Análisis y estructuración de datos para toma de decisiones',
+      'Diseño e implementación de procesos ETL (Extracción, Transformación y Carga)',
+      'Análisis de datos y procesamiento con Python y lenguaje R'
     ]
   },
   {
