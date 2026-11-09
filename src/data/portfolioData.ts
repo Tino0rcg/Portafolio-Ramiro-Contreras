@@ -225,7 +225,7 @@ export const projectsData: Project[] = [
 export const skillsData: SkillGroup[] = [
   {
     category: 'Inteligencia Artificial & Aplicaciones Web Modernas',
-    description: 'Automatización con inteligencia artificial (OpenAI, Claude, DeepSeek, Groq, Ollama), aplicaciones rápidas en tiempo real y soluciones interactivas.',
+    description: 'Automatización con inteligencia artificial (OpenAI, Claude, DeepSeek, Ollama), aplicaciones rápidas en tiempo real y soluciones interactivas.',
     skills: [
       {
         name: 'Modelos de IA: OpenAI, Claude (Anthropic) & DeepSeek',
@@ -233,9 +233,9 @@ export const skillsData: SkillGroup[] = [
         detail: 'Integración de modelos LLM para procesamiento de lenguaje natural, clasificación automática de solicitudes y generación de respuestas.'
       },
       {
-        name: 'Inferencia con Groq & IA Local con Ollama',
+        name: 'IA Local con Ollama & Modelos Privados',
         level: 'Especialidad',
-        detail: 'Ejecución y despliegue privado de modelos de IA en servidores locales con Ollama y aceleración de inferencia con hardware Groq LPU.'
+        detail: 'Ejecución y despliegue privado de modelos de IA de código abierto en servidores locales y entornos protegidos con Ollama.'
       },
       {
         name: 'API Google Gemini & Automatización con IA',
@@ -394,7 +394,7 @@ export const competenciasData: ProfessionalCompetency[] = [
   {
     title: 'Datos, Automatización e Inteligencia Artificial',
     items: [
-      'Modelos y Ecosistema de IA: OpenAI (GPT), Claude (Anthropic), DeepSeek, Groq y Ollama (IA local)',
+      'Modelos y Ecosistema de IA: OpenAI (GPT), Claude (Anthropic), DeepSeek y Ollama (IA local)',
       'Integración de herramientas de IA aplicada a procesos de negocio',
       'Automatización de flujos de trabajo e integración de servicios',
       'Análisis y estructuración de datos para toma de decisiones',
