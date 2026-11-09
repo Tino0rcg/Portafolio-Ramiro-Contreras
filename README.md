@@ -16,7 +16,7 @@
 
 ## 🛠️ Tecnologías Principales
 
-- **Frontend & UI**: React 19, TypeScript, Tailwind CSS, Vite, Lucide Icons.
+- **Frontend & UI**: React 19, TypeScript, Tailwind CSS, Lucide Icons.
 - **Arquitectura & Backend**: Next.js, PostgreSQL, Supabase, WebSockets, REST APIs.
 - **Automatización**: Inteligencia Artificial (Gemini API), Generación de PDF, PWA.
 
