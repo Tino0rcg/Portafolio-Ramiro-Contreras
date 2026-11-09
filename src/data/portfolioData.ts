@@ -8,7 +8,7 @@ export const personalInfo: PersonalInfo = {
     'Ingeniero en Informática de la Universidad de Las Américas, enfocado en la ingeniería de soluciones tecnológicas, desarrollo de software empresarial y transformación digital.',
     'Mi trabajo se centra en comprender los desafíos operativos y estratégicos de las organizaciones para diseñar e implementar soluciones tecnológicas que optimicen procesos, automaticen tareas y mejoren la gestión de sus operaciones.',
     'Cuento con experiencia en el diseño y desarrollo de plataformas SaaS, sistemas de gestión empresarial, aplicaciones web y herramientas digitales, participando en distintas etapas del ciclo de desarrollo: análisis de requerimientos, diseño de arquitectura, modelado de datos, implementación, integración de servicios y construcción de interfaces.',
-    'He participado en proyectos como plataformas para optimizar la gestión de equipos técnicos en terreno, sistemas de inventario y trazabilidad para empresas de ingeniería, portales web corporativos y herramientas de automatización de procesos operativos.',
+    'He liderado proyectos como plataformas para optimizar la gestión de equipos técnicos en terreno, sistemas de inventario y trazabilidad para empresas de ingeniería, portales web corporativos y herramientas de automatización de procesos operativos.',
     'Mi enfoque combina visión técnica y comprensión de negocio: utilizo la tecnología como un habilitador para resolver problemas reales, mejorar la productividad y generar impacto medible en las organizaciones.'
   ],
   location: 'Chile',
@@ -224,8 +224,10 @@ export const projectsData: Project[] = [
 export const skillsData: SkillGroup[] = [
   {
     category: 'Inteligencia Artificial & Aplicaciones Web Modernas',
-    description: 'Automatización con inteligencia artificial, aplicaciones rápidas en tiempo real y soluciones interactivas.',
+    description: 'Automatización con inteligencia artificial (OpenAI, Claude, DeepSeek, Groq, Ollama), aplicaciones rápidas en tiempo real y soluciones interactivas.',
     skills: [
+      { name: 'Modelos de IA: OpenAI, Claude (Anthropic) & DeepSeek', level: 'Especialidad' },
+      { name: 'Inferencia con Groq & IA Local con Ollama', level: 'Especialidad' },
       { name: 'API Google Gemini & Automatización con IA', level: 'Especialidad' },
       { name: 'Next.js 15 & React 19', level: 'Avanzado' },
       { name: 'TypeScript & JavaScript Moderno', level: 'Avanzado' },
@@ -291,6 +293,7 @@ export const competenciasData: ProfessionalCompetency[] = [
   {
     title: 'Datos, Automatización e Inteligencia Artificial',
     items: [
+      'Modelos y Ecosistema de IA: OpenAI (GPT), Claude (Anthropic), DeepSeek, Groq y Ollama (IA local)',
       'Integración de herramientas de IA aplicada a procesos de negocio',
       'Automatización de flujos de trabajo e integración de servicios',
       'Análisis y estructuración de datos para toma de decisiones',

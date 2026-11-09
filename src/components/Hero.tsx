@@ -133,8 +133,8 @@ export const Hero: React.FC = () => {
           <div className="flex items-center justify-start sm:justify-center gap-3 p-3.5 sm:p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
             <Terminal className="w-6 h-6 text-purple-400 shrink-0" />
             <div className="text-left">
-              <h4 className="text-sm font-semibold text-white">Automatización con IA</h4>
-              <p className="text-xs text-slate-400">Procesos Automáticos y Reportes</p>
+              <h4 className="text-sm font-semibold text-white">Inteligencia Artificial</h4>
+              <p className="text-xs text-slate-400">OpenAI, Claude, DeepSeek & Ollama</p>
             </div>
           </div>
         </div>
