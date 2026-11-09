@@ -1,80 +1,52 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Code2, Send } from 'lucide-react';
-import { personalInfo } from '../data/portfolioData';
+import React, { useState } from 'react';
+import { Menu, X, Code2 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { name: 'Proyectos', href: '#proyectos' },
     { name: 'Habilidades', href: '#habilidades' },
-    { name: 'Sobre Mí', href: '#sobre-mi' },
+    { name: 'Sobre mí', href: '#sobre-mi' },
     { name: 'Contacto', href: '#contacto' },
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/20 py-3'
-          : 'bg-transparent py-5'
-      }`}
-    >
+    <nav className="bg-[#0B111D] border-b border-[#29374D] sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <a
             href="#"
-            className="flex items-center gap-2 group text-white font-bold text-base sm:text-lg tracking-tight hover:opacity-90 transition-opacity min-w-0"
+            className="flex items-center gap-3 group text-[#F5F6FA] font-bold text-base tracking-tight hover:opacity-95 transition-opacity"
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform shrink-0">
-              <Code2 className="w-5 h-5" />
+            <div className="w-8 h-8 rounded-lg bg-[#6847FF] flex items-center justify-center text-white shrink-0 shadow-sm">
+              <Code2 className="w-4 h-4 text-white" />
             </div>
-            <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent truncate max-w-[150px] xs:max-w-[220px] sm:max-w-none">
-              {personalInfo.name !== 'Tu Nombre' ? personalInfo.name : 'Portafolio'}
+            <span className="text-[#F5F6FA]">
+              Ramiro Contreras
+              <span className="text-[#A99AFF]">.dev</span>
             </span>
-            <span className="text-indigo-400 font-mono text-xs sm:text-sm shrink-0">.dev</span>
           </a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation Aligned Right */}
           <div className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-6 text-sm font-medium text-slate-300">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="hover:text-indigo-400 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-indigo-400 hover:after:w-full after:transition-all after:duration-300"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA Contact Button */}
-            <a
-              href="#contacto"
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-500/25 transition-all hover:scale-105 active:scale-95"
-            >
-              <Send className="w-4 h-4" />
-              <span>Hablemos</span>
-            </a>
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-[#A9B5C8] hover:text-[#F5F6FA] transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2.5 rounded-xl text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+              className="p-2 rounded-lg text-[#A9B5C8] hover:text-[#F5F6FA] focus:outline-none"
               aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
             >
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -84,27 +56,17 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile menu dropdown */}
         {isOpen && (
-          <div className="md:hidden mt-3 pb-4 pt-2 border border-slate-700/80 bg-[#0d1322]/95 backdrop-blur-xl rounded-2xl p-4 shadow-2xl animate-fadeIn">
-            <div className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="px-3.5 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 text-sm font-medium transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
+          <div className="md:hidden py-4 border-t border-[#29374D] flex flex-col gap-3">
+            {navLinks.map((link) => (
               <a
-                href="#contacto"
+                key={link.name}
+                href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="mt-2 flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg shadow-indigo-600/30"
+                className="text-sm font-medium text-[#A9B5C8] hover:text-[#F5F6FA] px-2 py-1.5 transition-colors"
               >
-                <Send className="w-4 h-4" />
-                <span>Contactar Conmigo</span>
+                {link.name}
               </a>
-            </div>
+            ))}
           </div>
         )}
       </div>
