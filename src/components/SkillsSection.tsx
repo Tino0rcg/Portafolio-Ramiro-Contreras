@@ -63,8 +63,8 @@ export const SkillsSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Skills List: Sin textos cortados, ancho completo y expandible al hacer clic */}
-            <div className="grid grid-cols-1 gap-2.5 pt-1">
+            {/* Skills List: Cortos y compactos en 2 columnas como estaban antes, expandibles al clic */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 pt-1 sm:pt-2">
               {group.skills.map((skill) => {
                 const isExpanded = expandedSkill === skill.name;
 
@@ -72,26 +72,31 @@ export const SkillsSection: React.FC = () => {
                   <div
                     key={skill.name}
                     onClick={() => toggleSkill(skill.name)}
-                    className={`p-3 sm:p-3.5 rounded-xl border transition-all cursor-pointer select-none ${
+                    className={`p-2.5 rounded-xl border transition-all duration-200 cursor-pointer select-none ${
                       isExpanded
-                        ? 'bg-slate-800/90 border-indigo-500/70 shadow-lg shadow-indigo-500/10'
-                        : 'bg-slate-800/40 border-slate-800/80 hover:bg-slate-800/70 hover:border-slate-700/90'
+                        ? 'sm:col-span-2 bg-slate-800/90 border-indigo-500/70 shadow-lg shadow-indigo-500/10'
+                        : 'bg-slate-800/40 border-slate-800/80 hover:bg-slate-800/70 hover:border-slate-700/80'
                     }`}
                   >
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="flex items-start gap-2.5 min-w-0">
-                        <Check className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm font-medium text-slate-200 leading-snug break-words">
+                    <div className="flex items-center justify-between gap-2 min-w-0">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                        <span
+                          className={`text-xs sm:text-sm font-medium text-slate-200 ${
+                            isExpanded ? 'break-words' : 'truncate'
+                          }`}
+                          title={skill.name}
+                        >
                           {skill.name}
                         </span>
                       </div>
-                      <div className="flex items-center gap-2 shrink-0">
+                      <div className="flex items-center gap-1.5 shrink-0">
                         {skill.level && (
                           <span
-                            className={`text-[10px] sm:text-[11px] font-semibold px-2.5 py-0.5 rounded-md border shrink-0 whitespace-nowrap ${
+                            className={`text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded-md border shrink-0 whitespace-nowrap ${
                               skill.level === 'Especialidad'
                                 ? 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40'
-                                : 'bg-slate-900/80 text-slate-300 border-slate-700/60'
+                                : 'bg-slate-900/80 text-slate-400 border-slate-700/50'
                             }`}
                           >
                             {skill.level}
@@ -107,8 +112,8 @@ export const SkillsSection: React.FC = () => {
 
                     {/* Contenido expandido con contexto de aplicación real */}
                     {isExpanded && skill.detail && (
-                      <div className="mt-2.5 pt-2.5 border-t border-slate-700/60">
-                        <p className="text-xs sm:text-sm text-slate-300/95 leading-relaxed">
+                      <div className="mt-2.5 pt-2.5 border-t border-slate-700/60 animate-fade-in">
+                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                           {skill.detail}
                         </p>
                       </div>
