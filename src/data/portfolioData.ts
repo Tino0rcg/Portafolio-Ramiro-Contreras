@@ -274,14 +274,15 @@ export const skillsData: SkillGroup[] = [
     ]
   },
   {
-    category: 'Posicionamiento en Google, Gráficos & Bases de Datos',
-    description: 'Estrategias de visibilidad en Google (SEO), visualización de métricas de negocio y almacenamiento seguro.',
+    category: 'Cloud Computing, Bases de Datos Relacionales & Ciberseguridad',
+    description: 'Infraestructura cloud, bases de datos relacionales SQL (PostgreSQL), ciberseguridad, IoT y métricas de negocio.',
     skills: [
-      { name: 'Posicionamiento en Google (SEO para Empresas)', level: 'Avanzado' },
-      { name: 'Paneles de Control y Gráficos Interactivos', level: 'Avanzado' },
-      { name: 'Bases de Datos Seguras (PostgreSQL & Supabase)', level: 'Avanzado' },
-      { name: 'Tareas Automáticas Programadas en la Nube', level: 'Avanzado' },
-      { name: 'Notificaciones Automáticas por Correo y Celular', level: 'Avanzado' }
+      { name: 'Bases de Datos Relacionales SQL (PostgreSQL)', level: 'Avanzado' },
+      { name: 'Cloud Computing & Despliegues en la Nube', level: 'Avanzado' },
+      { name: 'Ciberseguridad & Protección de Datos', level: 'Avanzado' },
+      { name: 'IoT (Internet de las Cosas & Conectividad)', level: 'Avanzado' },
+      { name: 'Almacenamiento en Supabase & APIs', level: 'Avanzado' },
+      { name: 'Posicionamiento en Google (SEO para Empresas)', level: 'Avanzado' }
     ]
   },
   {
@@ -310,7 +311,7 @@ export const competenciasData: ProfessionalCompetency[] = [
     title: 'Arquitectura y Desarrollo de Software',
     items: [
       'Diseño y desarrollo de plataformas SaaS y aplicaciones web',
-      'Modelado de bases de datos relacionales y diseño de APIs',
+      'Modelado de bases de datos relacionales SQL (PostgreSQL) y diseño de APIs',
       'Implementación de arquitecturas modernas y escalables'
     ]
   },
@@ -325,11 +326,12 @@ export const competenciasData: ProfessionalCompetency[] = [
     ]
   },
   {
-    title: 'Tecnología e Infraestructura TI',
+    title: 'Cloud Computing, Ciberseguridad & IoT',
     items: [
-      'Integración de servicios en la nube y despliegue continuo',
-      'Implementación de buenas prácticas de desarrollo y seguridad',
-      'Consultoría en adopción de herramientas tecnológicas'
+      'Arquitectura Cloud Computing e integración de infraestructura en la nube',
+      'Ciberseguridad, protección de información y normativas de seguridad TI',
+      'Internet de las Cosas (IoT) y conectividad de dispositivos inteligentes',
+      'Integración de servicios, despliegue continuo y adopción tecnológica'
     ]
   }
 ];
