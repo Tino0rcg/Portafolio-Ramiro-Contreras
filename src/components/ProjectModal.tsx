@@ -8,7 +8,7 @@ interface ProjectModalProps {
   onOpenTour?: (project: Project) => void;
 }
 
-export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, onOpenTour: _onOpenTour }) => {
+export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, onOpenTour }) => {
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
 
   const copyToClipboard = (text: string, key: string) => {
@@ -279,18 +279,30 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               Cerrar ventana
             </button>
 
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-cyan-600 via-indigo-600 to-purple-600 hover:opacity-95 shadow-md shadow-indigo-600/30 transition-all hover:scale-105 text-center"
-              >
-                <Rocket className="w-4 h-4 text-cyan-200" />
-                <span>{project.demoCredentials || project.category === 'software' ? '🚀 Entrar a la Aplicación en Vivo' : 'Ver Sitio Web'}</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
-              </a>
-            )}
+            <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto">
+              {onOpenTour && (
+                <button
+                  type="button"
+                  onClick={() => onOpenTour(project)}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-indigo-300 bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 transition-all hover:scale-105 cursor-pointer"
+                >
+                  <Sparkles className="w-4 h-4 text-pink-400" />
+                  <span>Ver Tour Guiado</span>
+                </button>
+              )}
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-cyan-600 via-indigo-600 to-purple-600 hover:opacity-95 shadow-md shadow-indigo-600/30 transition-all hover:scale-105 text-center"
+                >
+                  <Rocket className="w-4 h-4 text-cyan-200" />
+                  <span>{project.demoCredentials || project.category === 'software' ? '🚀 Entrar a la Aplicación en Vivo' : 'Ver Sitio Web'}</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>

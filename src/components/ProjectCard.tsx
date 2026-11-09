@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, ArrowRight, Eye, Monitor, Globe, Wrench } from 'lucide-react';
+import { ExternalLink, ArrowRight, Eye, Monitor, Globe, Wrench, Sparkles } from 'lucide-react';
 import type { Project } from '../types';
 
 interface ProjectCardProps {
@@ -8,7 +8,7 @@ interface ProjectCardProps {
   onOpenTour?: (project: Project) => void;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails, onOpenTour: _onOpenTour }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails, onOpenTour }) => {
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'web':
@@ -134,18 +134,30 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
         {/* Action Footer */}
         <div className="pt-3.5 sm:pt-4 border-t border-slate-800/80">
           {isAppWithLive ? (
-            /* Sole single button for apps as requested */
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Entrar a la Aplicación en Vivo de ${project.title}`}
-              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:from-cyan-400 hover:to-indigo-500 shadow-md shadow-indigo-600/30 transition-all hover:scale-[1.02] active:scale-95 text-center"
-              title="Entrar a la aplicación en vivo con tour guiado"
-            >
-              <span>🚀 Entrar a la Aplicación en Vivo</span>
-              <ExternalLink className="w-3.5 h-3.5 opacity-80 shrink-0" />
-            </a>
+            <div className="flex flex-col sm:flex-row items-center gap-2 w-full">
+              {onOpenTour && (
+                <button
+                  type="button"
+                  onClick={() => onOpenTour(project)}
+                  className="w-full sm:flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-bold text-indigo-300 bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 transition-all hover:scale-[1.02] cursor-pointer"
+                  title="Ver tour interactivo guiado en el portafolio"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-pink-400" />
+                  <span>Tour Guiado</span>
+                </button>
+              )}
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Entrar a la Aplicación en Vivo de ${project.title}`}
+                className="w-full sm:flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:from-cyan-400 hover:to-indigo-500 shadow-md shadow-indigo-600/30 transition-all hover:scale-[1.02] active:scale-95 text-center"
+                title="Entrar a la aplicación en vivo"
+              >
+                <span>🚀 App en Vivo</span>
+                <ExternalLink className="w-3 h-3 opacity-80 shrink-0" />
+              </a>
+            </div>
           ) : (
             <div className="flex items-center justify-between gap-2 w-full">
               <button

@@ -28,7 +28,7 @@ export const projectsData: Project[] = [
     category: 'software',
     projectType: 'Plataforma SaaS para Gestión y Atención de Clientes',
     badge: 'Plataforma SaaS • Control en Vivo',
-    shortDescription: 'Plataforma SaaS para organizar y responder solicitudes de clientes a tiempo. Incluye control automático de plazos de atención, asignación inteligente de tareas con Inteligencia Artificial y chat en vivo sin demoras.',
+    shortDescription: 'Plataforma SaaS para organizar y responder solicitudes de clientes en tiempo real. Por cada movimiento del ticket e interacción en el chat, envía notificaciones automáticas al correo con un PDF de trazabilidad completa.',
     fullDescription: 'OnlineDesk es una plataforma SaaS diseñada para que las empresas gestionen requerimientos técnicos y solicitudes de sus clientes de manera ordenada, transparente y puntual. Permite organizar el trabajo en un tablero visual donde cada caso avanza por etapas claras (Ingresado, En proceso, En revisión y Terminado). Cuenta con un cronómetro inteligente que mide los tiempos de respuesta comprometidos con cada cliente y se pausa automáticamente cuando la solución está en revisión para no perjudicar la evaluación del equipo técnico. Además, por cada movimiento de etapa del ticket e interacción en el chat con el técnico, el sistema envía una notificación automática al correo del cliente adjuntando un informe en PDF con la trazabilidad completa del requerimiento. Incorpora también Inteligencia Artificial para clasificar el tipo de solicitud y asignarla al especialista con menor carga de trabajo, chat en vivo sin demoras y compatibilidad con celulares como aplicación instalable que envía notificaciones.',
     technologies: [
       'Next.js & React',
