@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, ExternalLink, Mail, Terminal, Globe, Cpu, MessageCircle, Layers } from 'lucide-react';
+import { ArrowDown, ExternalLink, Mail, Terminal, Globe, Cpu, MessageCircle, Layers, GraduationCap } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
@@ -17,8 +17,8 @@ export const Hero: React.FC = () => {
         {/* Engineering Role Badge & Availability Badge */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs sm:text-sm font-semibold backdrop-blur-sm">
-            <Cpu className="w-3.5 h-3.5 text-indigo-400" />
-            <span>Ingeniero Informático</span>
+            <GraduationCap className="w-4 h-4 text-indigo-400" />
+            <span>Ingeniero en Informática — Universidad de Las Américas</span>
           </div>
 
           {personalInfo.availableForHire && (

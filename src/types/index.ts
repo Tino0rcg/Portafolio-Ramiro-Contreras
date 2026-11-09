@@ -59,6 +59,7 @@ export interface ProfessionalCompetency {
 export interface PersonalInfo {
   name: string;
   role: string;
+  education?: string;
   tagline: string;
   bio: string[];
   location: string;

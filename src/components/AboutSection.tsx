@@ -9,7 +9,8 @@ import {
   CheckCircle2,
   MapPin,
   Laptop,
-  Sparkles
+  Sparkles,
+  GraduationCap
 } from 'lucide-react';
 import { personalInfo, experienceData, competenciasData } from '../data/portfolioData';
 
@@ -125,6 +126,16 @@ export const AboutSection: React.FC = () => {
                 <span>{personalInfo.workMode || 'Remoto / Híbrido'}</span>
               </span>
             </div>
+
+            {personalInfo.education && (
+              <div className="flex items-center gap-2 text-slate-300 pt-2 border-t border-slate-800/60">
+                <GraduationCap className="w-4 h-4 text-purple-400 shrink-0" />
+                <span className="leading-snug">
+                  <strong className="text-white font-medium">Estudios:</strong>{' '}
+                  {personalInfo.education}
+                </span>
+              </div>
+            )}
 
             <div className="flex items-center gap-2 text-emerald-400 text-xs sm:text-sm pt-2 border-t border-slate-800/60">
               <span className="relative flex h-2 w-2 shrink-0">
