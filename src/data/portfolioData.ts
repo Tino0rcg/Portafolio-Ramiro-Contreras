@@ -285,7 +285,6 @@ export const skillsData: SkillGroup[] = [
     skills: [
       { name: 'Git & GitHub (Control de Versiones)', level: 'Avanzado' },
       { name: 'Tailwind CSS (Diseño Visual Moderno)', level: 'Avanzado' },
-      { name: 'Docker (Contenedores y Despliegues)', level: 'Intermedio' },
       { name: 'Visual Studio Code', level: 'Avanzado' },
       { name: 'Pruebas de Conexión e Integración (Postman)', level: 'Avanzado' }
     ]
