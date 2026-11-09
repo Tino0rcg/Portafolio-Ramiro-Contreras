@@ -61,16 +61,15 @@ export const AboutSection: React.FC = () => {
 
       {/* Grid: Bio (Left) & Proyectos Destacados (Right) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-        {/* Left Column: 5 Bio Paragraphs */}
-        <div className="lg:col-span-7 space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
-          {personalInfo.bio.map((paragraph, index) => (
-            <p
-              key={index}
-              className="text-slate-300/90 leading-relaxed bg-slate-900/30 p-4 rounded-xl border border-slate-800/60"
-            >
-              {paragraph}
-            </p>
-          ))}
+        {/* Left Column: Unified Bio Narrative */}
+        <div className="lg:col-span-7 bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 sm:p-8 shadow-xl">
+          <div className="space-y-4 text-slate-300 text-sm sm:text-base md:text-[1.05rem] leading-relaxed font-normal">
+            {personalInfo.bio.map((paragraph, index) => (
+              <p key={index} className="text-slate-300/90 leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
 
         {/* Right Column: Proyectos Destacados Timeline & Quick Info */}
