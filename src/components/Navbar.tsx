@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
             </div>
             <span className="text-[#F5F6FA]">
               Ramiro Contreras González
-              <span className="text-[#A99AFF]">.dev</span>
+              <span className="text-[#A99AFF]">.ing</span>
             </span>
           </a>
 
