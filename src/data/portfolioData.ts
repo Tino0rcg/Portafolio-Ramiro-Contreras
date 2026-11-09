@@ -43,14 +43,6 @@ export const projectsData: Project[] = [
     ],
     featured: true,
     liveUrl: 'https://gesti-n-de-requerimientos-app.vercel.app',
-    demoCredentials: [
-      {
-        role: 'Administrador Full TI',
-        email: 'admin@vanguardia.cl',
-        password: 'Vanguardia_2025!',
-        description: 'Acceso total a gestión de requerimientos, tablero Kanban en tiempo real, chat colaborativo y analítica de tiempos de atención.'
-      }
-    ],
     highlights: [
       'Notificaciones al Correo & PDF con Trazabilidad: Por cada movimiento del ticket e interacción en el chat con el técnico, llega toda la información directamente al correo del cliente junto con un PDF de trazabilidad completa.',
       'Tablero Visual en Vivo: Las solicitudes avanzan ordenadamente por columnas (Ingresado, En proceso, En revisión y Terminado) actualizándose al instante sin recargar la página.',
@@ -102,26 +94,6 @@ export const projectsData: Project[] = [
     ],
     featured: true,
     liveUrl: 'https://demostracion-app-icsa-tino0rcgs-projects.vercel.app/dashboard?tour=true&step=1',
-    demoCredentials: [
-      {
-        role: 'Administrador General',
-        email: 'admin@icsa.cl',
-        password: 'admin123',
-        description: 'Control de proyectos, órdenes de trabajo, inventario de herramientas y métricas de terreno.'
-      },
-      {
-        role: 'Supervisor de Terreno',
-        email: 'supervisor@icsa.cl',
-        password: 'supervisor123',
-        description: 'Emisión de OTs en terreno, fotos comprimidas y toma de firmas presenciales en pantalla o a distancia.'
-      },
-      {
-        role: 'Prevención de Riesgos',
-        email: 'prevencion@icsa.cl',
-        password: 'prevencion123',
-        description: 'Supervisión de checklists de EPP y registro digital de charlas de seguridad de 5 minutos.'
-      }
-    ],
     highlights: [
       'Órdenes de Trabajo Digitales (Adiós al Lápiz y Papel): Registro de cables y equipos, fotos de respaldo comprimidas automáticamente para redes 3G/4G y generación instantánea del informe formal en PDF.',
       'Sistema Híbrido de Firmas (En Pantalla o a Distancia): Firma presencial con el dedo en la pantalla táctil o envío de enlace seguro por correo para firma remota desde cualquier celular u oficina.',
