@@ -36,9 +36,6 @@ export const SkillsSection: React.FC = () => {
         <p className="text-sm sm:text-base md:text-lg text-slate-300 px-2 sm:px-0">
           Herramientas y tecnologías modernas con las que diseño y construyo sistemas robustos, seguros y escalables.
         </p>
-        <p className="text-xs sm:text-sm text-indigo-400/90 mt-2 font-medium">
-          💡 Haz clic en cualquier tecnología para expandir su aplicación práctica en proyectos.
-        </p>
       </div>
 
       {/* Grid of Skill Groups */}
