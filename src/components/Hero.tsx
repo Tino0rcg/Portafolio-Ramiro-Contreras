@@ -1,34 +1,53 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, ArrowRight, Sparkles } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
 
-const featuredProjectsMeta: Record<
-  string,
-  { shortTitle: string; problemSolutionResult: string; technologiesText: string; browserUrl: string }
-> = {
+interface FeaturedProjectMeta {
+  tabName: string;
+  badge: string;
+  shortTitle: string;
+  problemSolutionResult: string;
+  technologiesText: string;
+  browserUrl: string;
+  glowColor: string;
+}
+
+const featuredProjectsMeta: Record<string, FeaturedProjectMeta> = {
   'onlinedesk-gestion-requerimientos': {
+    tabName: 'OnlineDesk',
+    badge: 'SaaS en Vivo',
     shortTitle: 'OnlineDesk — Plataforma SaaS en Tiempo Real',
     problemSolutionResult: 'Requerimientos desordenados · Tablero Kanban y SLA · Trazabilidad y PDF por correo',
     technologiesText: 'Next.js · TypeScript · Supabase Realtime · IA · PDF',
     browserUrl: 'gesti-n-de-requerimientos-app.vercel.app',
+    glowColor: 'from-indigo-600/20 via-blue-600/10 to-transparent',
   },
   'software-gestion-operativa-icsa': {
+    tabName: 'ICSA',
+    badge: 'Cero Papel',
     shortTitle: 'ICSA — Gestión de Órdenes en Terreno',
     problemSolutionResult: 'Uso de papel y demoras · Órdenes digitales y firmas táctiles · Actas e informes en PDF',
     technologiesText: 'Next.js 15 · PostgreSQL · Firmas en Pantalla · PDF',
     browserUrl: 'icsa-operaciones.vercel.app',
+    glowColor: 'from-teal-600/20 via-cyan-600/10 to-transparent',
   },
   'web-online-system': {
+    tabName: 'ONLINE System',
+    badge: 'Gemini IA',
     shortTitle: 'ONLINE System — Web con IA Autónoma',
     problemSolutionResult: 'Posicionamiento web lento · Automatización con API Gemini · Contenido técnico y SEO continuo',
     technologiesText: 'Next.js 15 · API Google Gemini · Tailwind CSS · SEO',
     browserUrl: 'onlinesystem.cl',
+    glowColor: 'from-emerald-600/20 via-teal-600/10 to-transparent',
   },
   'web-colectivo-oft': {
+    tabName: 'Colectivo OFT',
+    badge: 'Editorial & Video',
     shortTitle: 'Colectivo OFT — Estudio & Arquitectura',
     problemSolutionResult: 'Presentación estática · Portafolio editorial interactivo y video · Catálogo de proyectos',
     technologiesText: 'Next.js · React · Video Streaming · Optimización WebP',
     browserUrl: 'colectivooft.cl',
+    glowColor: 'from-amber-600/20 via-stone-700/10 to-transparent',
   },
 };
 
@@ -42,15 +61,18 @@ export const Hero: React.FC = () => {
       setCurrentIndex((prev) => (prev + 1) % projectsData.length);
     }, 4500);
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, currentIndex]);
 
   const currentProject = projectsData[currentIndex] || projectsData[0];
-  const meta =
+  const meta: FeaturedProjectMeta =
     featuredProjectsMeta[currentProject.id] || {
+      tabName: currentProject.title.split('—')[0].trim(),
+      badge: 'Destacado',
       shortTitle: currentProject.title,
       problemSolutionResult: currentProject.shortDescription,
       technologiesText: currentProject.technologies.slice(0, 4).join(' · '),
       browserUrl: 'proyecto.app',
+      glowColor: 'from-indigo-600/20 to-transparent',
     };
 
   const prevProject = () => {
@@ -103,75 +125,111 @@ export const Hero: React.FC = () => {
 
             {/* Indicador de disponibilidad */}
             <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#35D6A5]">
-              <span className="w-2 h-2 rounded-full bg-[#35D6A5] shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-[#35D6A5] shrink-0 animate-pulse" />
               <span>Disponible para proyectos y consultoría</span>
             </div>
           </div>
 
-          {/* Columna Derecha: Tarjeta de Proyecto Destacado */}
+          {/* Columna Derecha: Tarjeta de Proyecto Destacado (Dinámica con Timeline y Tabs) */}
           <div className="lg:col-span-5 w-full">
             <div
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
-              className="bg-[#131E30] border border-[#29374D] rounded-2xl p-5 sm:p-6 shadow-xl transition-all"
+              className="bg-[#131E30] border border-[#29374D] rounded-2xl p-4 sm:p-6 shadow-2xl relative overflow-hidden group"
             >
+              {/* Barra de progreso de tiempo (Timeline Dinámico) */}
+              <div className="w-full h-1 bg-[#1C2B43] rounded-full overflow-hidden mb-4">
+                <div
+                  key={currentIndex}
+                  className="h-full bg-gradient-to-r from-[#6847FF] to-[#A99AFF] rounded-full animate-progress-fill"
+                  style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+                />
+              </div>
+
               {/* Etiqueta superior y controles */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#A9B5C8] uppercase">
-                  PROYECTO DESTACADO ({currentIndex + 1}/4)
-                </span>
+              <div className="flex items-center justify-between mb-3.5">
                 <div className="flex items-center gap-2">
-                  <div className="flex items-center gap-1.5">
-                    {projectsData.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCurrentIndex(idx)}
-                        aria-label={`Ver proyecto ${idx + 1}`}
-                        className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                          currentIndex === idx ? 'w-5 bg-[#6847FF]' : 'w-1.5 bg-[#29374D] hover:bg-[#A9B5C8]'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <div className="flex items-center gap-0.5 ml-1">
-                    <button
-                      onClick={prevProject}
-                      aria-label="Proyecto anterior"
-                      className="p-1 rounded text-[#A9B5C8] hover:text-[#F5F6FA] hover:bg-[#1C2B43] transition-colors cursor-pointer"
-                    >
-                      <ChevronLeft className="w-3.5 h-3.5" />
-                    </button>
-                    <button
-                      onClick={nextProject}
-                      aria-label="Proyecto siguiente"
-                      className="p-1 rounded text-[#A9B5C8] hover:text-[#F5F6FA] hover:bg-[#1C2B43] transition-colors cursor-pointer"
-                    >
-                      <ChevronRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
+                  <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#A9B5C8] uppercase">
+                    PROYECTO DESTACADO
+                  </span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#1C2B43] text-indigo-300 border border-[#29374D]">
+                    {currentIndex + 1} / 4
+                  </span>
+                </div>
+
+                {/* Flechas de navegación rápida */}
+                <div className="flex items-center gap-1">
+                  <button
+                    onClick={prevProject}
+                    aria-label="Proyecto anterior"
+                    className="p-1.5 rounded-lg text-[#A9B5C8] hover:text-[#F5F6FA] bg-[#1C2B43]/70 hover:bg-[#1C2B43] border border-[#29374D] transition-all cursor-pointer"
+                  >
+                    <ChevronLeft className="w-3.5 h-3.5" />
+                  </button>
+                  <button
+                    onClick={nextProject}
+                    aria-label="Proyecto siguiente"
+                    className="p-1.5 rounded-lg text-[#A9B5C8] hover:text-[#F5F6FA] bg-[#1C2B43]/70 hover:bg-[#1C2B43] border border-[#29374D] transition-all cursor-pointer"
+                  >
+                    <ChevronRight className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </div>
 
-              {/* Contenedor de captura del proyecto: Ventana de navegador */}
-              <div className="bg-[#1C2B43] border border-[#29374D] rounded-xl overflow-hidden mb-5">
-                {/* Barra superior con 3 pequeños círculos y URL del navegador */}
+              {/* Tabs interactivas con los 4 nombres de proyecto */}
+              <div className="grid grid-cols-4 gap-1.5 mb-4 p-1 rounded-xl bg-[#0B111D]/80 border border-[#29374D]/80">
+                {projectsData.map((project, idx) => {
+                  const projectMeta = featuredProjectsMeta[project.id];
+                  const label = projectMeta ? projectMeta.tabName : `P${idx + 1}`;
+                  const isActive = currentIndex === idx;
+
+                  return (
+                    <button
+                      key={project.id}
+                      onClick={() => setCurrentIndex(idx)}
+                      className={`py-1.5 px-1 rounded-lg text-[11px] font-medium transition-all text-center truncate cursor-pointer flex items-center justify-center gap-1 ${
+                        isActive
+                          ? 'bg-[#6847FF] text-white shadow-md shadow-[#6847FF]/30 font-semibold'
+                          : 'text-[#A9B5C8] hover:text-[#F5F6FA] hover:bg-[#1C2B43]'
+                      }`}
+                      title={project.title}
+                    >
+                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#35D6A5] shrink-0" />}
+                      <span className="truncate">{label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Contenedor de captura del proyecto: Ventana de navegador con animación fluida */}
+              <div className="bg-[#1C2B43] border border-[#29374D] rounded-xl overflow-hidden mb-4 shadow-inner relative">
+                {/* Barra superior con 3 pequeños círculos, URL del navegador y Badge */}
                 <div className="flex items-center justify-between px-3.5 py-2.5 border-b border-[#29374D] bg-[#162235]">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#29374D]" />
                     <span className="w-2.5 h-2.5 rounded-full bg-[#29374D]" />
                     <span className="w-2.5 h-2.5 rounded-full bg-[#29374D]" />
                   </div>
-                  <span className="text-[11px] font-mono text-[#A9B5C8]/75 truncate max-w-[170px] xs:max-w-[220px]">
-                    https://{meta.browserUrl}
+                  <span className="text-[11px] font-mono text-[#A9B5C8]/80 truncate max-w-[150px] xs:max-w-[200px] flex items-center gap-1">
+                    <span className="text-[#35D6A5]">🔒</span> https://{meta.browserUrl}
                   </span>
-                  <div className="w-5" />
+                  <span className="text-[10px] font-semibold text-[#A99AFF] bg-[#6847FF]/15 px-2 py-0.5 rounded border border-[#6847FF]/30 flex items-center gap-1">
+                    <Sparkles className="w-2.5 h-2.5 text-[#A99AFF]" />
+                    <span>{meta.badge}</span>
+                  </span>
                 </div>
 
-                {/* Área visual del proyecto */}
-                <div className="h-44 sm:h-52 w-full bg-[#1C2B43] flex items-center justify-center p-4 overflow-hidden relative">
+                {/* Área visual del proyecto con animación al cambiar */}
+                <div
+                  key={currentProject.id}
+                  className="h-44 sm:h-52 w-full bg-[#162235] flex items-center justify-center p-4 overflow-hidden relative animate-hero-project"
+                >
+                  {/* Resplandor ambiental dinámico */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${meta.glowColor} pointer-events-none opacity-50`} />
+
                   {currentProject.isLogo ? (
                     currentProject.logoBg === 'bg-white' ? (
-                      <div className="px-5 py-3 rounded-xl bg-white shadow-md border border-white/80">
+                      <div className="px-5 py-3 rounded-xl bg-white shadow-lg border border-white/90 relative z-10 transition-transform duration-300 group-hover:scale-105">
                         <img
                           src={currentProject.image}
                           alt={currentProject.title}
@@ -182,39 +240,58 @@ export const Hero: React.FC = () => {
                       <img
                         src={currentProject.image}
                         alt={currentProject.title}
-                        className="max-h-20 sm:max-h-24 max-w-[80%] object-contain drop-shadow-md"
+                        className="max-h-20 sm:max-h-24 max-w-[80%] object-contain drop-shadow-xl relative z-10 transition-transform duration-300 group-hover:scale-105"
                       />
                     )
                   ) : (
                     <img
                       src={currentProject.image}
                       alt={currentProject.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   )}
                 </div>
               </div>
 
-              {/* Información del proyecto */}
-              <div className="min-h-[110px] flex flex-col justify-between">
+              {/* Información del proyecto dinámico con animación sincronizada */}
+              <div
+                key={`info-${currentProject.id}`}
+                className="min-h-[110px] flex flex-col justify-between animate-hero-project"
+              >
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-[#F5F6FA] mb-1 line-clamp-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#F5F6FA] mb-1 line-clamp-1 group-hover:text-white transition-colors">
                     {meta.shortTitle}
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#A9B5C8] mb-1.5 line-clamp-2">
+                  <p className="text-xs sm:text-sm text-[#A9B5C8] mb-1.5 leading-relaxed line-clamp-2">
                     {meta.problemSolutionResult}
                   </p>
                   <p className="text-xs text-[#A9B5C8]/80 mb-3 font-mono">
                     {meta.technologiesText}
                   </p>
                 </div>
-                <a
-                  href="#proyectos"
-                  className="text-sm font-semibold text-[#A99AFF] hover:text-[#6847FF] transition-colors inline-flex items-center gap-1.5 pt-1"
-                >
-                  <span>Ver caso completo</span>
-                  <span aria-hidden="true">&gt;</span>
-                </a>
+
+                {/* Acciones del caso */}
+                <div className="flex items-center justify-between gap-3 pt-1 border-t border-[#29374D]/80">
+                  <a
+                    href="#proyectos"
+                    className="text-sm font-semibold text-[#A99AFF] hover:text-[#6847FF] transition-colors inline-flex items-center gap-1.5 group/link"
+                  >
+                    <span>Ver caso completo</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
+                  </a>
+
+                  {currentProject.liveUrl && (
+                    <a
+                      href={currentProject.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white px-2.5 py-1 rounded-lg bg-[#1C2B43] hover:bg-[#253754] border border-[#29374D] transition-colors"
+                    >
+                      <span>App en Vivo</span>
+                      <ExternalLink className="w-3 h-3 text-cyan-400" />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>
