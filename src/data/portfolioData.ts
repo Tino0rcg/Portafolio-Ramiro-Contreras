@@ -280,12 +280,13 @@ export const skillsData: SkillGroup[] = [
     ]
   },
   {
-    category: 'Herramientas de Ingeniería & Calidad de Software',
-    description: 'Control de versiones, pruebas de integración y entornos de despliegue continuo.',
+    category: 'Herramientas de Trabajo & Entorno de Desarrollo',
+    description: 'Herramientas prácticas utilizadas en el día a día para programar, gestionar versiones y publicar proyectos.',
     skills: [
-      { name: 'Git & GitHub (Control de Versiones)', level: 'Avanzado' },
-      { name: 'Tailwind CSS (Diseño Visual Moderno)', level: 'Avanzado' },
-      { name: 'Visual Studio Code', level: 'Avanzado' },
+      { name: 'Git & GitHub (Control de Versiones y Código)', level: 'Avanzado' },
+      { name: 'Visual Studio Code (Editor & Entorno de Trabajo)', level: 'Avanzado' },
+      { name: 'Vite & Node.js (NPM)', level: 'Avanzado' },
+      { name: 'Vercel (Despliegue y Hosting en la Nube)', level: 'Avanzado' },
       { name: 'Pruebas de Conexión e Integración (Postman)', level: 'Avanzado' }
     ]
   }
