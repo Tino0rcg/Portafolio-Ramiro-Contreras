@@ -84,7 +84,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#0B111D] text-[#F5F6FA] py-12 sm:py-16 md:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-[#0B111D] text-[#F5F6FA] pt-8 sm:pt-10 md:pt-12 lg:pt-14 pb-12 sm:pb-16 md:pb-20 lg:pb-20">
       {/* Imagen de fondo con overlay para preservar legibilidad y estética profesional */}
       <div className="absolute inset-0 pointer-events-none select-none z-0">
         <img
@@ -100,9 +100,9 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* Columna Izquierda: Contenido Principal */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
+          <div className="lg:col-span-7 flex flex-col items-start text-left lg:pt-2">
             {/* Etiqueta superior */}
             <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#A9B5C8] uppercase mb-4 sm:mb-5">
               INGENIERO INFORMÁTICO
