@@ -84,8 +84,22 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#0B111D] text-[#F5F6FA] py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-[#0B111D] text-[#F5F6FA] py-12 sm:py-16 md:py-20 lg:py-24">
+      {/* Imagen de fondo con overlay para preservar legibilidad y estética profesional */}
+      <div className="absolute inset-0 pointer-events-none select-none z-0">
+        <img
+          src="/pexels-cesar-gaviria-232160-36571389.jpg"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-center opacity-30 sm:opacity-35"
+        />
+        {/* Degradado lateral: mayor opacidad a la izquierda para contraste de texto */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B111D] via-[#0B111D]/80 to-[#0B111D]/60" />
+        {/* Degradado vertical: transición suave con el navbar arriba y la siguiente sección abajo */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B111D] via-transparent to-[#0B111D]" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Columna Izquierda: Contenido Principal */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
