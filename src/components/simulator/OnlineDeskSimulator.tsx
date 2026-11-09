@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Sparkles, Clock, CheckCircle2, Send, Pause, 
-  ArrowRight, RotateCcw, ShieldCheck, Check, Building2
+  ArrowRight, RotateCcw, ShieldCheck, Check, Building2,
+  Mail, FileText
 } from 'lucide-react';
 
 export const OnlineDeskSimulator: React.FC = () => {
@@ -365,6 +366,18 @@ export const OnlineDeskSimulator: React.FC = () => {
               </div>
             </div>
 
+            {/* Live Traceability & Email Sync Alert */}
+            <div className="px-4 py-1.5 bg-indigo-950/70 border-b border-indigo-900/40 flex items-center justify-between text-[10px] text-slate-300">
+              <span className="flex items-center gap-1.5">
+                <Mail className="w-3.5 h-3.5 text-indigo-400" />
+                <span>Por cada mensaje e interacción se envía notificación al correo</span>
+              </span>
+              <span className="flex items-center gap-1 font-medium text-emerald-400">
+                <FileText className="w-3 h-3 text-pink-400" />
+                <span>PDF con trazabilidad en vivo</span>
+              </span>
+            </div>
+
             {/* Message Area */}
             <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-[#0a0f1d]">
               {chatMessages.map((msg, idx) => (
@@ -446,6 +459,23 @@ export const OnlineDeskSimulator: React.FC = () => {
                 </div>
                 <p className="text-xs text-slate-300">
                   El cronómetro se congeló exactamente en <strong>{formatSlaTime(slaSeconds)}</strong> al momento de la revisión del cliente. Esto protege el porcentaje legal de cumplimiento técnico sin penalizar demoras del usuario final.
+                </p>
+              </div>
+
+              {/* Email & PDF Traceability Card */}
+              <div className="p-4 rounded-xl bg-indigo-950/40 border border-indigo-500/40 space-y-2">
+                <div className="flex items-center justify-between text-xs font-bold text-indigo-300">
+                  <span className="flex items-center gap-2">
+                    <Mail className="w-4 h-4 text-indigo-400" />
+                    Notificación al Correo & PDF con Trazabilidad Completa
+                  </span>
+                  <span className="flex items-center gap-1 px-2 py-0.5 rounded text-[10px] bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-mono">
+                    <FileText className="w-3 h-3 text-pink-400" />
+                    PDF Adjunto
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Por cada movimiento de etapa del requerimiento y cada interacción en el chat con el técnico, el sistema notifica de inmediato al correo del cliente adjuntando un <strong>informe en PDF con el historial y la trazabilidad completa</strong>.
                 </p>
               </div>
 
