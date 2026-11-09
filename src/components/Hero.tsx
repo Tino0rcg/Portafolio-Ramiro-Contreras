@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Mail, Terminal, Globe, Cpu, MessageCircle } from 'lucide-react';
+import { ArrowDown, ExternalLink, Mail, Terminal, Globe, Cpu, MessageCircle, Layers } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
@@ -15,7 +15,7 @@ export const Hero: React.FC = () => {
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Engineering Role Badge & Availability Badge */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs sm:text-sm font-semibold backdrop-blur-sm">
             <Cpu className="w-3.5 h-3.5 text-indigo-400" />
             <span>Ingeniero Informático</span>
@@ -32,84 +32,86 @@ export const Hero: React.FC = () => {
           )}
         </div>
 
-        {/* Main Title & Role */}
-        <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-5 sm:mb-6 leading-[1.15]">
-          Creando soluciones de{' '}
-          <span className="bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">
-            Software
-          </span>{' '}
-          y experiencias{' '}
-          <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
-            Web
+        {/* Nombre: Ramiro Contreras Gonzalez */}
+        <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-3 sm:mb-4 leading-[1.12]">
+          <span className="bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent">
+            {personalInfo.name}
           </span>
         </h1>
 
-        {/* Tagline / Subtitle */}
-        <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 mb-8 sm:mb-10 leading-relaxed font-normal px-2 sm:px-0">
+        {/* Qué haces / Especialidad */}
+        <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent mb-4 sm:mb-6">
+          Ingeniería de Soluciones Tecnológicas & Software Empresarial
+        </p>
+
+        {/* Descripción breve de tu enfoque / Qué tipo de soluciones desarrollas */}
+        <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 mb-8 sm:mb-10 leading-relaxed font-normal px-2 sm:px-0">
           {personalInfo.tagline}
         </p>
 
-        {/* Call to Actions */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-12 w-full max-w-xs sm:max-w-none mx-auto">
+        {/* Call to Actions Principales: Ver Proyectos & LinkedIn */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 w-full max-w-md sm:max-w-none mx-auto">
+          {/* Botón para ver proyectos */}
           <a
             href="#proyectos"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:scale-105 active:scale-95 transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:scale-105 active:scale-95 transition-all text-sm sm:text-base cursor-pointer"
           >
+            <Layers className="w-4 h-4 text-white" />
             <span>Ver Proyectos</span>
             <ArrowDown className="w-4 h-4" />
           </a>
 
+          {/* Botón LinkedIn */}
           <a
-            href="#contacto"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 hover:text-white shadow-md hover:scale-105 active:scale-95 transition-all"
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-white bg-[#0A66C2] hover:bg-[#084e96] border border-blue-400/30 shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:scale-105 active:scale-95 transition-all text-sm sm:text-base cursor-pointer"
           >
-            <Mail className="w-4 h-4 text-indigo-400" />
-            <span>Contactar Conmigo</span>
+            <LinkedinIcon className="w-4 h-4 fill-current text-white shrink-0" />
+            <span>LinkedIn</span>
+            <ExternalLink className="w-3.5 h-3.5 opacity-80" />
           </a>
         </div>
 
-        {/* Social / Direct Links */}
-        <div className="flex items-center justify-center gap-3 sm:gap-5 text-slate-400 mb-10 sm:mb-14">
-          {personalInfo.github && (
-            <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="p-3 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500 hover:text-indigo-400 hover:scale-110 transition-all shadow"
-            >
-              <GithubIcon className="w-5 h-5" />
-            </a>
-          )}
-          {personalInfo.linkedin && (
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="p-3 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500 hover:text-indigo-400 hover:scale-110 transition-all shadow"
-            >
-              <LinkedinIcon className="w-5 h-5" />
-            </a>
-          )}
+        {/* Canales de Contacto Directo */}
+        <div className="flex flex-wrap items-center justify-center gap-3 text-slate-400 mb-10 sm:mb-14">
+          <a
+            href={`mailto:${personalInfo.email}`}
+            aria-label="Email"
+            title={`Enviar correo a ${personalInfo.email}`}
+            className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500 hover:text-indigo-400 transition-all text-xs font-medium"
+          >
+            <Mail className="w-4 h-4 text-indigo-400" />
+            <span>{personalInfo.email}</span>
+          </a>
+
           {personalInfo.whatsapp && (
             <a
               href={`https://wa.me/${personalInfo.whatsapp.replace(/\+/g, '')}`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="p-3 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500 hover:text-emerald-400 hover:scale-110 transition-all shadow"
+              title="Contactar por WhatsApp"
+              className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500 hover:text-emerald-400 transition-all text-xs font-medium"
             >
-              <MessageCircle className="w-5 h-5" />
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
+              <span>WhatsApp</span>
             </a>
           )}
-          <a
-            href={`mailto:${personalInfo.email}`}
-            aria-label="Email"
-            className="p-3 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500 hover:text-indigo-400 hover:scale-110 transition-all shadow"
-          >
-            <Mail className="w-5 h-5" />
-          </a>
+
+          {personalInfo.github && (
+            <a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              title="Ver perfil de GitHub"
+              className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500 hover:text-indigo-400 transition-all"
+            >
+              <GithubIcon className="w-4 h-4" />
+            </a>
+          )}
         </div>
 
         {/* Key Competence Highlights / Stats */}
@@ -117,16 +119,16 @@ export const Hero: React.FC = () => {
           <div className="flex items-center justify-start sm:justify-center gap-3 p-3.5 sm:p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
             <Globe className="w-6 h-6 text-cyan-400 shrink-0" />
             <div className="text-left">
-              <h4 className="text-sm font-semibold text-white">Ingeniería Web</h4>
-              <p className="text-xs text-slate-400">Páginas y Aplicaciones Rápidas</p>
+              <h4 className="text-sm font-semibold text-white">Plataformas SaaS & Gestión</h4>
+              <p className="text-xs text-slate-400">Control Operativo y Trazabilidad</p>
             </div>
           </div>
 
           <div className="flex items-center justify-start sm:justify-center gap-3 p-3.5 sm:p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
             <Cpu className="w-6 h-6 text-indigo-400 shrink-0" />
             <div className="text-left">
-              <h4 className="text-sm font-semibold text-white">Sistemas & SaaS</h4>
-              <p className="text-xs text-slate-400">Gestión de Procesos y Operación</p>
+              <h4 className="text-sm font-semibold text-white">Ingeniería Web & Cloud</h4>
+              <p className="text-xs text-slate-400">Next.js, PostgreSQL y APIs</p>
             </div>
           </div>
 

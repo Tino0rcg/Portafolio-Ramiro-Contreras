@@ -1,9 +1,9 @@
 import type { PersonalInfo, Project, SkillGroup, ExperienceItem, ProfessionalCompetency } from '../types';
 
 export const personalInfo: PersonalInfo = {
-  name: 'Ramiro Contreras',
+  name: 'Ramiro Contreras Gonzalez',
   role: 'Ingeniero Informático | Ingeniería de Soluciones & Transformación Digital',
-  tagline: 'Diseño, desarrollo e implementación de soluciones tecnológicas para empresas.',
+  tagline: 'Diseño, desarrollo e implementación de plataformas SaaS, sistemas de gestión operativa y soluciones de software orientadas a optimizar procesos, automatizar flujos de trabajo e integrar Inteligencia Artificial.',
   bio: [
     'Ingeniero en Informática de la Universidad de Las Américas, enfocado en la ingeniería de soluciones tecnológicas, desarrollo de software empresarial y transformación digital.',
     'Mi trabajo se centra en comprender los desafíos operativos y estratégicos de las organizaciones para diseñar e implementar soluciones tecnológicas que optimicen procesos, automaticen tareas y mejoren la gestión de sus operaciones.',
