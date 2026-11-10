@@ -28,11 +28,6 @@ export const AboutSection: React.FC = () => {
       bg: 'bg-indigo-500/10 border-indigo-500/20'
     },
     {
-      icon: GitBranch,
-      color: 'text-blue-400',
-      bg: 'bg-blue-500/10 border-blue-500/20'
-    },
-    {
       icon: Bot,
       color: 'text-purple-400',
       bg: 'bg-purple-500/10 border-purple-500/20'
@@ -41,6 +36,11 @@ export const AboutSection: React.FC = () => {
       icon: Server,
       color: 'text-emerald-400',
       bg: 'bg-emerald-500/10 border-emerald-500/20'
+    },
+    {
+      icon: GitBranch,
+      color: 'text-blue-400',
+      bg: 'bg-blue-500/10 border-blue-500/20'
     }
   ];
 
@@ -176,7 +176,7 @@ export const AboutSection: React.FC = () => {
           {competenciasData.map((comp, idx) => {
             const config = competencyIcons[idx] || competencyIcons[0];
             const IconComponent = config.icon;
-            const isFullWidth = idx === 2;
+            const isFullWidth = idx === 4;
 
             return (
               <div

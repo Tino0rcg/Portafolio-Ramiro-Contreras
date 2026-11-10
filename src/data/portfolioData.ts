@@ -367,22 +367,6 @@ export const competenciasData: ProfessionalCompetency[] = [
     ]
   },
   {
-    title: 'Ingeniería de Software & Metodologías de Trabajo',
-    items: [
-      'Análisis y levantamiento de requerimientos',
-      'Arquitectura y diseño de software',
-      'Desarrollo frontend y backend',
-      'Diseño y gestión de bases de datos',
-      'Integración de API y servicios',
-      'Metodologías de desarrollo de software',
-      'Control de versiones (Git y GitHub)',
-      'Seguridad de aplicaciones',
-      'Implementación y despliegue de software',
-      'Automatización de procesos e integración de inteligencia artificial',
-      'Calidad y mantenimiento'
-    ]
-  },
-  {
     title: 'Datos, Automatización e Inteligencia Artificial',
     items: [
       'Modelos y Ecosistema de IA: OpenAI (GPT), Claude (Anthropic), DeepSeek y Ollama (IA local)',
@@ -400,6 +384,22 @@ export const competenciasData: ProfessionalCompetency[] = [
       'Ciberseguridad, protección de información y normativas de seguridad TI',
       'Internet de las Cosas (IoT) y conectividad de dispositivos inteligentes',
       'Integración de servicios, despliegue continuo y adopción tecnológica'
+    ]
+  },
+  {
+    title: 'Ingeniería de Software & Metodologías de Trabajo',
+    items: [
+      'Análisis y levantamiento de requerimientos',
+      'Arquitectura y diseño de software',
+      'Desarrollo frontend y backend',
+      'Diseño y gestión de bases de datos',
+      'Integración de API y servicios',
+      'Metodologías de desarrollo de software',
+      'Control de versiones (Git y GitHub)',
+      'Seguridad de aplicaciones',
+      'Implementación y despliegue de software',
+      'Automatización de procesos e integración de inteligencia artificial',
+      'Calidad y mantenimiento'
     ]
   }
 ];
