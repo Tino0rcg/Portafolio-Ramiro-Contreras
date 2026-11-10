@@ -359,14 +359,21 @@ export const competenciasData: ProfessionalCompetency[] = [
     ]
   },
   {
+    title: 'Arquitectura y Desarrollo de Software',
+    items: [
+      'Diseño y desarrollo de plataformas SaaS y aplicaciones web',
+      'Modelado de bases de datos relacionales SQL (PostgreSQL) y diseño de APIs',
+      'Implementación de arquitecturas modernas y escalables'
+    ]
+  },
+  {
     title: 'Ingeniería de Software & Metodologías de Trabajo',
     items: [
-      'Metodología Scrum: Sprints ágiles, ceremonias de equipo y entregas continuas de valor',
-      'Método Kanban: Gestión visual de flujo continuo, control de tiempos de atención y tableros interactivos',
-      'Modelo en Cascada: Ciclo de vida estructurado, especificación de requerimientos y desarrollo secuencial',
-      'Modelo en Espiral: Ciclos iterativos con análisis y mitigación proactiva de riesgos técnicos',
-      'Modelo Evolutivo: Desarrollo incremental adaptado a la retroalimentación y evolución del negocio',
-      'Diseño y arquitectura de plataformas SaaS, aplicaciones web y modelado de APIs'
+      'Metodología Scrum',
+      'Método Kanban',
+      'Modelo en Cascada',
+      'Modelo en Espiral',
+      'Modelo Evolutivo'
     ]
   },
   {

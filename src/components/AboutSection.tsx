@@ -4,6 +4,7 @@ import {
   Briefcase,
   Layers,
   Code2,
+  GitBranch,
   Bot,
   Server,
   CheckCircle2,
@@ -25,6 +26,11 @@ export const AboutSection: React.FC = () => {
       icon: Code2,
       color: 'text-indigo-400',
       bg: 'bg-indigo-500/10 border-indigo-500/20'
+    },
+    {
+      icon: GitBranch,
+      color: 'text-blue-400',
+      bg: 'bg-blue-500/10 border-blue-500/20'
     },
     {
       icon: Bot,
@@ -168,13 +174,16 @@ export const AboutSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {competenciasData.map((comp, idx) => {
-            const config = competencyIcons[idx % competencyIcons.length];
+            const config = competencyIcons[idx] || competencyIcons[0];
             const IconComponent = config.icon;
+            const isLast = idx === 4;
 
             return (
               <div
                 key={idx}
-                className="p-5 sm:p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition-all hover:bg-slate-900/80 group"
+                className={`p-5 sm:p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition-all hover:bg-slate-900/80 group ${
+                  isLast ? 'md:col-span-2' : ''
+                }`}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div
@@ -187,7 +196,13 @@ export const AboutSection: React.FC = () => {
                   </h4>
                 </div>
 
-                <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
+                <ul
+                  className={
+                    isLast
+                      ? 'grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-300'
+                      : 'space-y-2.5 text-xs sm:text-sm text-slate-300'
+                  }
+                >
                   {comp.items.map((item, itemIdx) => (
                     <li key={itemIdx} className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
