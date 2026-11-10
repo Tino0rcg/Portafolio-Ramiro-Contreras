@@ -48,7 +48,7 @@ export const AboutSection: React.FC = () => {
         </div>
 
         <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          Ingeniero Informático{' '}
+          Ingeniero Informático & Ingeniero de Software{' '}
           <span className="text-slate-500 font-normal hidden sm:inline">|</span>{' '}
           <span className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent block sm:inline mt-1 sm:mt-0">
             Ingeniería de Soluciones & Transformación Digital

@@ -58,7 +58,7 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col items-start text-left pt-2 sm:pt-3 lg:pt-6">
             {/* Etiqueta superior */}
             <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#A9B5C8] uppercase mb-4 sm:mb-5">
-              INGENIERO INFORMÁTICO
+              INGENIERO INFORMÁTICO · INGENIERO DE SOFTWARE
             </p>
 
             {/* Título principal con saltos de línea exactos */}

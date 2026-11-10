@@ -2,11 +2,11 @@ import type { PersonalInfo, Project, SkillGroup, ExperienceItem, ProfessionalCom
 
 export const personalInfo: PersonalInfo = {
   name: 'Ramiro Contreras González',
-  role: 'Ingeniero Informático | Ingeniería de Soluciones & Transformación Digital',
+  role: 'Ingeniero Informático & Ingeniero de Software | Ingeniería de Soluciones & Transformación Digital',
   education: 'Ingeniería en Informática — Universidad de Las Américas',
   tagline: 'Diseño, desarrollo e implementación de plataformas SaaS, sistemas de gestión operativa y soluciones de software orientadas a optimizar procesos, automatizar flujos de trabajo e integrar Inteligencia Artificial.',
   bio: [
-    'Ingeniero en Informática de la Universidad de Las Américas, enfocado en la ingeniería de soluciones tecnológicas, desarrollo de software empresarial y transformación digital.',
+    'Ingeniero en Informática e Ingeniero de Software de la Universidad de Las Américas, enfocado en la ingeniería de soluciones tecnológicas, desarrollo de software empresarial y transformación digital.',
     'Mi trabajo se centra en comprender los desafíos operativos y estratégicos de las organizaciones para diseñar e implementar soluciones tecnológicas que optimicen procesos, automaticen tareas y mejoren la gestión de sus operaciones.',
     'Cuento con experiencia en el diseño y desarrollo de plataformas SaaS, sistemas de gestión empresarial, aplicaciones web y herramientas digitales, participando en distintas etapas del ciclo de desarrollo: análisis de requerimientos, diseño de arquitectura, modelado de datos, implementación, integración de servicios y construcción de interfaces.',
     'He liderado proyectos como plataformas para optimizar la gestión de equipos técnicos en terreno, sistemas de inventario y trazabilidad para empresas de ingeniería, portales web corporativos y herramientas de automatización de procesos operativos.',
@@ -359,11 +359,14 @@ export const competenciasData: ProfessionalCompetency[] = [
     ]
   },
   {
-    title: 'Arquitectura y Desarrollo de Software',
+    title: 'Ingeniería de Software & Metodologías de Trabajo',
     items: [
-      'Diseño y desarrollo de plataformas SaaS y aplicaciones web',
-      'Modelado de bases de datos relacionales SQL (PostgreSQL) y diseño de APIs',
-      'Implementación de arquitecturas modernas y escalables'
+      'Metodología Scrum: Sprints ágiles, ceremonias de equipo y entregas continuas de valor',
+      'Método Kanban: Gestión visual de flujo continuo, control de tiempos de atención y tableros interactivos',
+      'Modelo en Cascada: Ciclo de vida estructurado, especificación de requerimientos y desarrollo secuencial',
+      'Modelo en Espiral: Ciclos iterativos con análisis y mitigación proactiva de riesgos técnicos',
+      'Modelo Evolutivo: Desarrollo incremental adaptado a la retroalimentación y evolución del negocio',
+      'Diseño y arquitectura de plataformas SaaS, aplicaciones web y modelado de APIs'
     ]
   },
   {

@@ -1,6 +1,6 @@
 # Portafolio Profesional — Ramiro Contreras
 
-> **Ingeniero Informático**  
+> **Ingeniero Informático & Ingeniero de Software**  
 > Desarrollo de software, sistemas de gestión empresarial y soluciones web adaptadas a los procesos de cada empresa.
 
 ---
