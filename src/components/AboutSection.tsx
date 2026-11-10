@@ -176,13 +176,13 @@ export const AboutSection: React.FC = () => {
           {competenciasData.map((comp, idx) => {
             const config = competencyIcons[idx] || competencyIcons[0];
             const IconComponent = config.icon;
-            const isLast = idx === 4;
+            const isFullWidth = idx === 2;
 
             return (
               <div
                 key={idx}
                 className={`p-5 sm:p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition-all hover:bg-slate-900/80 group ${
-                  isLast ? 'md:col-span-2' : ''
+                  isFullWidth ? 'md:col-span-2' : ''
                 }`}
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -198,8 +198,8 @@ export const AboutSection: React.FC = () => {
 
                 <ul
                   className={
-                    isLast
-                      ? 'grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-300'
+                    isFullWidth
+                      ? 'grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-xs sm:text-sm text-slate-300'
                       : 'space-y-2.5 text-xs sm:text-sm text-slate-300'
                   }
                 >

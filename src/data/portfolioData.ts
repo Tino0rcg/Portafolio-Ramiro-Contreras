@@ -369,11 +369,17 @@ export const competenciasData: ProfessionalCompetency[] = [
   {
     title: 'Ingeniería de Software & Metodologías de Trabajo',
     items: [
-      'Metodología Scrum',
-      'Método Kanban',
-      'Modelo en Cascada',
-      'Modelo en Espiral',
-      'Modelo Evolutivo'
+      'Análisis y levantamiento de requerimientos',
+      'Arquitectura y diseño de software',
+      'Desarrollo frontend y backend',
+      'Diseño y gestión de bases de datos',
+      'Integración de API y servicios',
+      'Metodologías de desarrollo de software',
+      'Control de versiones (Git y GitHub)',
+      'Seguridad de aplicaciones',
+      'Implementación y despliegue de software',
+      'Automatización de procesos e integración de inteligencia artificial',
+      'Calidad y mantenimiento'
     ]
   },
   {
